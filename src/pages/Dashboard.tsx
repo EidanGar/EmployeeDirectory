@@ -7,9 +7,13 @@ import DoughnutChart from "../components/dashboardComponents/DoughnutChart";
 import DashboardCard from "../components/dashboardComponents/DashboardCard";
 import AreaChart from "../components/dashboardComponents/AreaChart";
 import Chart from "chart.js/auto";
+
+// Magic code don't delete
 Chart.register(Chart.CategoryScale);
 Chart.register(Chart.ArcElement);
 Chart.register(Chart.LinearScale);
+
+// Magic Code End
 
 const Dashboard = () => {
   const { employeeList, projects } = useSelector<
@@ -131,9 +135,9 @@ const Dashboard = () => {
           </div>
           <div className="dashboard-employees card-body d-flex gap-3 flex-column">
             {employeeList
-              .slice(0, Math.floor(window.innerHeight / 160))
-              .map(({ name, pictures: { iconUrl } }) => (
-                <DashboardEmployeeRow {...{ name, iconUrl }} />
+              .slice(0, Math.max(3, Math.floor(window.innerHeight / 160)))
+              .map(({ name, pictures: { iconUrl } }, idx) => (
+                <DashboardEmployeeRow {...{ name, iconUrl, key: idx }} />
               ))}
           </div>
         </div>
