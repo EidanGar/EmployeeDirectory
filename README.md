@@ -18,7 +18,7 @@ Users can view detailed employee profiles, which include all employee informatio
   <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 </div>
 
-## Reports Page
+## Projects Page
 <div align="center">
   <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 </div>
