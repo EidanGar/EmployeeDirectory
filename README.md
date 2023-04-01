@@ -4,26 +4,16 @@ This web application allows companies to manage their employee information in a 
 Users can view detailed employee profiles, which include all employee information in one place, along with the option to upload a profile picture. The dashboard gives a quick overview of the current employee count and provides insights into the distribution of employees based on their job titles, department, or other relevant information.
 
 ## Dashboard Page
-<div align="center">
-  <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
-</div>
+<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 
 ## Employees Page
-<div align="center">
-  <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
-</div>
+<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 
 ## Departments Page
-<div align="center">
-  <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
-</div>
+<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 
 ## Projects Page
-<div align="center">
-  <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
-</div>
+<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 
 ## Help Page
-<div align="center">
-  <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
-</div>
+<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
