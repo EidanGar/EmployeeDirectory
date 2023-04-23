@@ -32,20 +32,25 @@ const App = () => {
       dispatch({ type: Types.ApplicationReducerTypes.LOADING, payload: true });
       try {
         const fetchResult = await fetchEmployees();
-        dispatch({
-          type: Types.ApplicationReducerTypes.LIST,
-          payload: fetchResult
-        });
+
+        if (fetchResult && !("error" in fetchResult)) {
+          dispatch({
+            type: Types.ApplicationReducerTypes.LIST,
+            payload: fetchResult,
+          });
+        } else {
+          throw new Error(fetchResult.reason);
+        }
       } catch (error) {
         dispatch({
           type: Types.ApplicationReducerTypes.ERROR,
-          payload: { error: true, reason: "Failed to fetch employees" }
+          payload: { error: true, reason: "Failed to fetch employees" },
         });
       }
       setTimeout(() => {
         dispatch({
           type: Types.ApplicationReducerTypes.LOADING,
-          payload: false
+          payload: false,
         });
       }, 200);
     };
