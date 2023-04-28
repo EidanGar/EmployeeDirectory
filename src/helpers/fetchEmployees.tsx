@@ -1,7 +1,7 @@
 import {
   jobDepartments,
   softSkills,
-  employeeDescriptions
+  employeeDescriptions,
 } from "../static/employeeData";
 
 function randomSubarray(array: any[]) {
@@ -19,7 +19,7 @@ function randomSubarray(array: any[]) {
 }
 
 const fetchEmployees = async () => {
-  const userFecthApi = "https://randomuser.me/api/?results=100";
+  const userFecthApi = "https://randomuser.me/api/?results=100&nat=us";
 
   try {
     const userFetchResponse = await fetch(userFecthApi);
@@ -40,11 +40,11 @@ const fetchEmployees = async () => {
       const contact = { email: user?.email ?? "", phone: user?.phone ?? "" };
       let pictures = {
         iconUrl: user.picture.thumbnail,
-        imageUrl: user.picture.large
+        imageUrl: user.picture.large,
       };
       const skills = {
         softSkills: randomSubarray(softSkills),
-        hardSkills: randomSubarray(job.hardSkills)
+        hardSkills: randomSubarray(job.hardSkills),
       };
       const description = `${name} is ${
         employeeDescriptions[
@@ -63,14 +63,14 @@ const fetchEmployees = async () => {
         skills,
         age,
         isWorker,
-        id
+        id,
       };
 
       id++;
 
       employees.push(employee);
     }
-    
+
     return employees;
   } catch (error) {
     if (error instanceof Error) {
