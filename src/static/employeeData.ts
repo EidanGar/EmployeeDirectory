@@ -30,57 +30,57 @@ export const employeeDescriptions = [
   "a creative and innovative professional with a passion for exploring new ideas and finding unique solutions.",
   "a dedicated and persistent employee who consistently strives to achieve goals and overcome challenges.",
   "a highly skilled and knowledgeable professional with a strong ability to learn quickly and apply new skills.",
-  "a flexible and adaptable worker with a strong ability to adjust to new and changing environments."
+  "a flexible and adaptable worker with a strong ability to adjust to new and changing environments.",
 ];
 
 export const FAQs = [
   {
     question: "What is an employee directory application?",
     answer:
-      "An employee directory application is a software tool used to manage employee information within an organization. It typically includes features such as employee profiles, search functionality, and organizational charts."
+      "An employee directory application is a software tool used to manage employee information within an organization. It typically includes features such as employee profiles, search functionality, and organizational charts.",
   },
   {
     question:
       "What kind of information is typically included in an employee directory application?",
     answer:
-      "Employee directory applications typically include basic employee information such as name, job title, department, and contact information. Some applications may also include additional information such as skills, certifications, and job responsibilities."
+      "Employee directory applications typically include basic employee information such as name, job title, department, and contact information. Some applications may also include additional information such as skills, certifications, and job responsibilities.",
   },
   {
     question:
       "How is employee information managed within an employee directory application?",
     answer:
-      "Employee information is typically managed through a centralized database that is accessed through the employee directory application. This database is usually maintained by the human resources department or other designated personnel."
+      "Employee information is typically managed through a centralized database that is accessed through the employee directory application. This database is usually maintained by the human resources department or other designated personnel.",
   },
   {
     question:
       "How can I search for specific employees within the employee directory application?",
     answer:
-      "Most employee directory applications include a search function that allows users to search for employees by name, job title, department, or other criteria. Some applications may also include advanced search features that allow for more complex searches."
+      "Most employee directory applications include a search function that allows users to search for employees by name, job title, department, or other criteria. Some applications may also include advanced search features that allow for more complex searches.",
   },
   {
     question:
       "Can I update my own employee information within the employee directory application?",
     answer:
-      "This will depend on the specific application and the permissions granted by your organization. Some employee directory applications allow employees to update their own information, while others require that updates be made by designated personnel."
+      "This will depend on the specific application and the permissions granted by your organization. Some employee directory applications allow employees to update their own information, while others require that updates be made by designated personnel.",
   },
   {
     question:
       "Is employee information within the employee directory application secure?",
     answer:
-      "Yes, employee information within the employee directory application should be kept secure and only accessible by authorized personnel. Most applications use encryption and other security measures to protect employee data."
+      "Yes, employee information within the employee directory application should be kept secure and only accessible by authorized personnel. Most applications use encryption and other security measures to protect employee data.",
   },
   {
     question:
       "Can I access the employee directory application from outside of the office?",
     answer:
-      "This will depend on the specific application and the policies of your organization. Some employee directory applications may be accessible from remote locations, while others may only be accessible from within the office network."
+      "This will depend on the specific application and the policies of your organization. Some employee directory applications may be accessible from remote locations, while others may only be accessible from within the office network.",
   },
   {
     question:
       "Can I export employee information from the employee directory application?",
     answer:
-      "This will depend on the specific application and the permissions granted by your organization. Some employee directory applications may allow for exporting of employee data in various formats, while others may not allow for any exporting of data."
-  }
+      "This will depend on the specific application and the permissions granted by your organization. Some employee directory applications may allow for exporting of employee data in various formats, while others may not allow for any exporting of data.",
+  },
 ];
 
 export const projectData: ProjectData = {
@@ -88,178 +88,178 @@ export const projectData: ProjectData = {
     {
       title: "Employee Training Program",
       description:
-        "Develop and implement a training program for new hires and existing employees to improve skills and knowledge."
+        "Developing a training program for new hires and existing employees to enhance skills, increase job satisfaction, and retain top talent.",
     },
     {
       title: "Benefits Administration System",
       description:
-        "Create an online system for managing employee benefits such as health insurance, 401k, and other benefits."
+        "Creating an online system for managing employee benefits to streamline administration, reduce burden on HR staff, and provide robust reporting capabilities.",
     },
     {
       title: "Recruitment Strategy Development",
       description:
-        "Develop a strategy for attracting top talent and building a diverse workforce."
+        "Developing a strategy for attracting top talent and building a diverse workforce through effective sourcing, selection, and onboarding processes.",
     },
     {
       title: "Performance Management System",
       description:
-        "Develop a system to track and evaluate employee performance and provide feedback and coaching."
-    }
+        "Developing a system to track and evaluate employee performance, provide feedback and coaching, and align performance with organizational goals to retain top talent.",
+    },
   ],
   Finance: [
     {
       title: "Financial Reporting Dashboard",
       description:
-        "Develop a dashboard for displaying financial metrics and key performance indicators (KPIs) in real-time."
+        "Develop a real-time dashboard for displaying critical financial metrics and key performance indicators (KPIs) that enable stakeholders to monitor financial health, make data-driven decisions, and identify trends and opportunities for improvement.",
     },
     {
       title: "Budgeting and Forecasting Tool",
       description:
-        "Create a tool for managing and forecasting budgets and expenses."
+        "Create a robust tool for managing and forecasting budgets and expenses. The tool will enable finance teams to set and track budgets, forecast revenue and expenses, and provide scenario analysis to improve decision-making and planning.",
     },
     {
       title: "Accounts Payable Automation System",
       description:
-        "Automate the accounts payable process to streamline payments and reduce errors."
+        "Automate the accounts payable process to improve efficiency, reduce errors, and ensure timely payments. The system will streamline invoice processing, enable automatic payment approvals, and provide real-time payment status updates to vendors.",
     },
     {
       title: "Tax Planning and Compliance Solution",
       description:
-        "Develop a tool to help ensure compliance with tax laws and regulations and optimize tax planning."
-    }
+        "Develop a comprehensive tax planning and compliance tool that ensures compliance with tax laws and regulations while optimizing tax planning. The tool will provide up-to-date tax information, automate compliance reporting, and provide tax planning insights to help businesses save money and avoid penalties.",
+    },
   ],
   Marketing: [
     {
       title: "Brand Awareness Campaign",
       description:
-        "Develop and implement a campaign to increase brand awareness and reach a wider audience."
+        "Develop and execute a multi-channel campaign to increase brand awareness, generate buzz, and reach a wider audience. The campaign will leverage a mix of tactics such as PR, digital marketing, and event marketing to maximize reach and impact.",
     },
     {
       title: "Content Marketing Strategy Development",
       description:
-        "Develop a strategy for creating and distributing valuable, relevant, and consistent content to attract and retain a clearly defined audience."
+        "Develop a comprehensive content marketing strategy that aligns with the organization's goals, audience needs, and brand voice. The strategy will focus on creating and distributing valuable and relevant content that attracts, engages, and converts prospects into customers.",
     },
     {
       title: "Social Media Management Platform",
       description:
-        "Develop a platform for managing and analyzing social media accounts and campaigns."
+        "Develop a social media management platform that enables businesses to manage and analyze their social media accounts and campaigns in one place. The platform will provide tools for scheduling posts, monitoring social media activity, and analyzing engagement metrics to optimize performance.",
     },
     {
       title: "Market Research and Analysis Tool",
       description:
-        "Develop a tool for conducting market research and analyzing data to identify trends and opportunities."
-    }
+        "Develop a tool for conducting market research and analyzing data to identify trends and opportunities. The tool will provide businesses with actionable insights into market trends, competitive landscape, and customer behavior to inform strategic decision-making and improve ROI.",
+    },
   ],
   Operations: [
     {
       title: "Supply Chain Optimization System",
       description:
-        "Develop a system for optimizing the supply chain and reducing costs while maintaining quality and efficiency."
+        "Develop a data-driven supply chain optimization system that improves supplier performance, reduces lead times, and lowers transportation costs. The system will use predictive analytics and machine learning to optimize inventory levels, demand forecasting, and transportation routing.",
     },
     {
       title: "Inventory Management System",
       description:
-        "Develop a system for tracking and managing inventory levels, orders, and shipments."
+        "Develop an inventory management system that tracks inventory levels, orders, and shipments in real-time. The system will use barcode scanning and RFID technology to automate inventory tracking and replenishment, and provide accurate data for forecasting and analysis.",
     },
     {
       title: "Quality Control System",
       description:
-        "Develop a system for monitoring and ensuring product and service quality."
+        "Develop a comprehensive quality control system that ensures consistent product and service quality. The system will establish quality standards, conduct inspections and audits, and implement corrective actions to continuously improve quality and minimize defects and customer complaints.",
     },
     {
       title: "Process Improvement Initiative",
       description:
-        "Identify and improve inefficient or ineffective processes to increase productivity and reduce costs."
-    }
+        "Identify and improve inefficient or ineffective processes that impede productivity and increase costs. The initiative will use Lean Six Sigma methodology to eliminate waste, standardize processes, and streamline operations, resulting in improved efficiency, quality, and customer satisfaction.",
+    },
   ],
   "Information Technology (IT)": [
     {
       title: "Cybersecurity Solution",
       description:
-        "Develop a solution for protecting the organization's IT infrastructure and data from cyber threats and attacks."
+        "Developing a solution to ensure the organization's IT infrastructure and data are secure from cyber threats, by implementing comprehensive security measures and providing regular risk assessments.",
     },
     {
       title: "Cloud Migration Strategy Development",
       description:
-        "Develop a strategy for migrating on-premises applications and data to the cloud to improve flexibility, scalability, and efficiency."
+        "Developing a strategy for migrating on-premises applications and data to the cloud to improve flexibility, scalability, and efficiency, and reduce infrastructure costs.",
     },
     {
       title: "Data Analytics Platform",
       description:
-        "Develop a platform for collectingand analyzing data to generate insights and inform decision-making."
+        "Developing a platform for collecting and analyzing data to generate insights and inform decision-making, by creating dashboards and reports to enable data-driven decision-making.",
     },
     {
       title: "Enterprise Resource Planning (ERP) System",
       description:
-        "Implement an integrated software solution for managing and automating key business processes across the organization."
-    }
+        "Implementing an integrated software solution for managing and automating key business processes across the organization, including finance, supply chain, and human resources, to improve operational efficiency and productivity.",
+    },
   ],
   Sales: [
     {
       title: "Sales Enablement Program",
       description:
-        "Develop and implement a program to empower sales teams with the tools, resources, and training needed to increase productivity and effectiveness."
+        "Developing and implementing a comprehensive sales enablement program that includes training, coaching, tools, and resources to help sales teams increase productivity, effectiveness, and revenue generation.",
     },
     {
       title: "Lead Generation and Management System",
       description:
-        "Develop a system for generating and managing leads through targeted marketing campaigns and sales outreach."
+        "Designing and implementing a lead generation and management system that leverages targeted marketing campaigns and sales outreach to attract, engage, and convert prospects into loyal customers.",
     },
     {
       title: "Customer Relationship Management (CRM) System",
       description:
-        "Implement a CRM system for managing and analyzing customer interactions and data to improve customer satisfaction and retention."
+        "Implementing a robust CRM system that enables sales teams to manage customer interactions, data, and analytics to improve customer satisfaction, retention, and revenue growth.",
     },
     {
       title: "Sales Performance Analysis and Optimization Tool",
       description:
-        "Develop a tool for analyzing sales performance data and identifying opportunities to improve sales processes and outcomes."
-    }
+        "Developing a data-driven sales performance analysis and optimization tool that helps sales teams identify key performance indicators, analyze sales data, and improve sales processes to increase revenue, customer satisfaction, and brand loyalty.",
+    },
   ],
   "Customer Service": [
     {
       title: "Customer Service Training Program",
       description:
-        "Develop and implement a training program for customer service representatives to improve customer satisfaction and retention."
+        "Developing and implementing a training program for customer service representatives to enhance their skills, increase customer satisfaction, and improve customer retention rates. The training includes modules on communication skills, problem-solving, conflict resolution, and product knowledge.",
     },
     {
       title: "Customer Feedback Management System",
       description:
-        "Develop a system for collecting and analyzing customer feedback to identify areas for improvement and track performance."
+        "Developing a system to collect and analyze customer feedback to identify areas for improvement in products, services, and support. The system includes tools for tracking customer feedback, prioritizing issues, and monitoring resolution times to ensure high customer satisfaction rates.",
     },
     {
       title: "Customer Service Chatbot",
       description:
-        "Develop a chatbot for providing automated customer support and assistance through web and mobile channels."
+        "Developing a chatbot for providing automated customer support and assistance through web and mobile channels. The chatbot utilizes machine learning and natural language processing to understand customer queries and provide accurate and timely responses, thereby reducing response times and increasing customer satisfaction rates.",
     },
     {
       title: "Service Level Agreement (SLA) Management System",
       description:
-        "Implement a system for tracking and managing service level agreements with customers to ensure timely and effective support."
-    }
+        "Implementing a system for tracking and managing service level agreements with customers to ensure timely and effective support. The system includes tools for setting SLA targets, monitoring performance against targets, and generating reports for performance analysis and improvement planning.",
+    },
   ],
   "Research and Development (R&D)": [
     {
       title: "Product Development Initiative",
       description:
-        "Identify and develop new products or features to meet customer needs and stay competitive in the market."
+        "Identifying new product ideas and developing them into viable solutions to meet customer needs and remain competitive in the market, while balancing time-to-market and development costs.",
     },
     {
       title: "Research and Innovation Program",
       description:
-        "Develop and implement a program for researching and exploring new technologies and innovation opportunities to drive business growth and development."
+        "Developing and implementing a comprehensive program for researching and exploring new technologies, innovation opportunities, and emerging trends to drive business growth and development, while fostering a culture of creativity and experimentation.",
     },
     {
       title: "Prototyping and Testing Platform",
       description:
-        "Develop a platform for creating and testing prototypes to validate ideas and concepts before investing significant resources into development."
+        "Developing a robust platform for rapidly creating and testing prototypes to validate ideas and concepts, reducing time-to-market and minimizing development costs, while facilitating collaboration between design, engineering, and other teams.",
     },
     {
       title: "Collaboration and Knowledge Sharing Platform",
       description:
-        "Develop a platform for promoting collaboration and knowledge sharing among R&D teams to accelerate innovation and progress."
-    }
-  ]
+        "Developing an intuitive platform for promoting collaboration, communication, and knowledge sharing among R&D teams, enabling cross-functional collaboration, sharing of best practices, and idea generation to accelerate innovation and progress.",
+    },
+  ],
 };
 
 export const softSkills = [
@@ -302,7 +302,7 @@ export const softSkills = [
   "Passion",
   "Professionalism",
   "Self-Awareness",
-  "Humor"
+  "Humor",
 ];
 
 export const jobDepartments = [
@@ -316,8 +316,8 @@ export const jobDepartments = [
           "Employee relations",
           "Performance management",
           "Recruitment and selection",
-          "Compensation and benefits administration"
-        ]
+          "Compensation and benefits administration",
+        ],
       },
       {
         title: "HR Generalist",
@@ -326,8 +326,8 @@ export const jobDepartments = [
           "Employee relations",
           "Performance management",
           "Recruitment and selection",
-          "Compensation and benefits administration"
-        ]
+          "Compensation and benefits administration",
+        ],
       },
       {
         title: "Recruiter",
@@ -336,8 +336,8 @@ export const jobDepartments = [
           "Employee branding",
           "Talent acquisition and retention strategies",
           "Data analysis and reporting",
-          "Employment law compliance"
-        ]
+          "Employment law compliance",
+        ],
       },
       {
         title: "Talent Acquisition Specialist",
@@ -346,8 +346,8 @@ export const jobDepartments = [
           "Employee branding",
           "Talent acquisition and retention strategies",
           "Data analysis and reporting",
-          "Employment law compliance"
-        ]
+          "Employment law compliance",
+        ],
       },
       {
         title: "Benefits Specialist",
@@ -356,10 +356,10 @@ export const jobDepartments = [
           "Employee benefits counseling",
           "Insurance and benefits laws and regulations",
           "Benefits plan design and analysis",
-          "Data analysis and reporting"
-        ]
-      }
-    ]
+          "Data analysis and reporting",
+        ],
+      },
+    ],
   },
   {
     department: "Finance",
@@ -371,8 +371,8 @@ export const jobDepartments = [
           "Data analysis and reporting",
           "Budgeting and forecasting",
           "Investment analysis and portfolio management",
-          "Financial statements and reporting"
-        ]
+          "Financial statements and reporting",
+        ],
       },
       {
         title: "Accountant",
@@ -381,8 +381,8 @@ export const jobDepartments = [
           "Financial statements preparation",
           "Tax compliance and planning",
           "Cost accounting",
-          "Auditing and compliance"
-        ]
+          "Auditing and compliance",
+        ],
       },
       {
         title: "Financial Manager",
@@ -391,8 +391,8 @@ export const jobDepartments = [
           "Budgeting and forecasting",
           "Risk management",
           "Investment analysis and portfolio management",
-          "Financial statements and reporting"
-        ]
+          "Financial statements and reporting",
+        ],
       },
       {
         title: "Budget Analyst",
@@ -401,8 +401,8 @@ export const jobDepartments = [
           "Cost analysis and control",
           "Financial planning and analysis",
           "Data analysis and reporting",
-          "Budget preparation and monitoring"
-        ]
+          "Budget preparation and monitoring",
+        ],
       },
       {
         title: "Controller",
@@ -411,10 +411,10 @@ export const jobDepartments = [
           "Financial analysis and reporting",
           "Internal controls and compliance",
           "Budget preparation and monitoring",
-          "Auditing and compliance"
-        ]
-      }
-    ]
+          "Auditing and compliance",
+        ],
+      },
+    ],
   },
   {
     department: "Marketing",
@@ -426,8 +426,8 @@ export const jobDepartments = [
           "Brand management",
           "Market research and analysis",
           "Campaign planning and execution",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Brand Manager",
@@ -436,8 +436,8 @@ export const jobDepartments = [
           "Product positioning and messaging",
           "Marketing communications and advertising",
           "Consumer insights and market research",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Marketing Coordinator",
@@ -446,8 +446,8 @@ export const jobDepartments = [
           "Event planning and execution",
           "Marketing communications and advertising",
           "Data analysis and reporting",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Digital Marketing Specialist",
@@ -456,8 +456,8 @@ export const jobDepartments = [
           "Search engine optimization (SEO)",
           "Search engine marketing (SEM)",
           "Social media marketing",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Product Manager",
@@ -466,10 +466,10 @@ export const jobDepartments = [
           "Market research and analysis",
           "Product development and management",
           "Product positioning and messaging",
-          "Performance tracking and reporting"
-        ]
-      }
-    ]
+          "Performance tracking and reporting",
+        ],
+      },
+    ],
   },
   {
     department: "Operations",
@@ -481,8 +481,8 @@ export const jobDepartments = [
           "Production planning and control",
           "Supply chain management",
           "Inventory management",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Supply Chain Manager",
@@ -491,8 +491,8 @@ export const jobDepartments = [
           "Procurement and sourcing",
           "Inventory management",
           "Logistics and transportation management",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Production Manager",
@@ -501,8 +501,8 @@ export const jobDepartments = [
           "Quality control and assurance",
           "Equipment maintenance and management",
           "Process improvement and optimization",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Logistics Manager",
@@ -511,8 +511,8 @@ export const jobDepartments = [
           "Inventory management",
           "Warehouse management",
           "Freight and shipping management",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Quality Control Manager",
@@ -521,10 +521,10 @@ export const jobDepartments = [
           "Quality management systems",
           "Inspection and testing techniques",
           "Quality data analysis and reporting",
-          "Performance tracking and reporting"
-        ]
-      }
-    ]
+          "Performance tracking and reporting",
+        ],
+      },
+    ],
   },
   {
     department: "Information Technology (IT)",
@@ -536,8 +536,8 @@ export const jobDepartments = [
           "Project management",
           "Network and system administration",
           "Software development",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Network Administrator",
@@ -546,8 +546,8 @@ export const jobDepartments = [
           "Network security and firewall management",
           "Router and switch configuration",
           "Remote access and VPN setup",
-          "Performance monitoring and reporting"
-        ]
+          "Performance monitoring and reporting",
+        ],
       },
       {
         title: "Systems Analyst",
@@ -556,8 +556,8 @@ export const jobDepartments = [
           "Software development and programming",
           "Data analysis and reporting",
           "Systems testing and debugging",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Database Administrator",
@@ -566,8 +566,8 @@ export const jobDepartments = [
           "SQL programming and database management",
           "Data backup and recovery",
           "Performance tuning and optimization",
-          "Performance monitoring and reporting"
-        ]
+          "Performance monitoring and reporting",
+        ],
       },
       {
         title: "Software Developer",
@@ -584,10 +584,10 @@ export const jobDepartments = [
           "Ruby",
           "Kotlin",
           "React",
-          "Typescript"
-        ]
-      }
-    ]
+          "Typescript",
+        ],
+      },
+    ],
   },
   {
     department: "Sales",
@@ -599,8 +599,8 @@ export const jobDepartments = [
           "Account management and development",
           "Sales team leadership and coaching",
           "Performance tracking and reporting",
-          "Business development and relationship building"
-        ]
+          "Business development and relationship building",
+        ],
       },
       {
         title: "Account Manager",
@@ -609,8 +609,8 @@ export const jobDepartments = [
           "Relationship building and customer service",
           "Sales forecasting and quota attainment",
           "Performance tracking and reporting",
-          "Product and service knowledge"
-        ]
+          "Product and service knowledge",
+        ],
       },
       {
         title: "Sales Representative",
@@ -619,8 +619,8 @@ export const jobDepartments = [
           "Lead generation and qualification",
           "Sales presentations and demonstrations",
           "Negotiation and closing",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Business Development Manager",
@@ -629,8 +629,8 @@ export const jobDepartments = [
           "Market research and analysis",
           "Lead generation and qualification",
           "Sales forecasting and quota attainment",
-          "Performance tracking and reporting"
-        ]
+          "Performance tracking and reporting",
+        ],
       },
       {
         title: "Territory Sales Manager",
@@ -639,10 +639,10 @@ export const jobDepartments = [
           "Account management and development",
           "Sales forecasting and quota attainment",
           "Performance tracking and reporting",
-          "Business development and relationship building"
-        ]
-      }
-    ]
+          "Business development and relationship building",
+        ],
+      },
+    ],
   },
   {
     department: "Customer Service",
@@ -654,8 +654,8 @@ export const jobDepartments = [
           "Team leadership and coaching",
           "Problem solving and escalation management",
           "Performance tracking and reporting",
-          "Relationship building and customer retention"
-        ]
+          "Relationship building and customer retention",
+        ],
       },
       {
         title: "Customer Service Representative",
@@ -664,8 +664,8 @@ export const jobDepartments = [
           "Customer service and support",
           "Problem solving and escalation management",
           "Performance tracking and reporting",
-          "Relationship building and customer retention"
-        ]
+          "Relationship building and customer retention",
+        ],
       },
       {
         title: "Technical Support Specialist",
@@ -674,8 +674,8 @@ export const jobDepartments = [
           "Technical support and troubleshooting",
           "Problem solving and escalation management",
           "Performance tracking and reporting",
-          "Relationship building and customer retention"
-        ]
+          "Relationship building and customer retention",
+        ],
       },
       {
         title: "Call Center Manager",
@@ -684,8 +684,8 @@ export const jobDepartments = [
           "Team leadership and coaching",
           "Performance tracking and reporting",
           "Problem solving and escalation management",
-          "Relationship building and customer retention"
-        ]
+          "Relationship building and customer retention",
+        ],
       },
       {
         title: "Help Desk Specialist",
@@ -694,10 +694,10 @@ export const jobDepartments = [
           "Technical support and troubleshooting",
           "Performance tracking and reporting",
           "Problem solving and escalation management",
-          "Relationship building and customer retention"
-        ]
-      }
-    ]
+          "Relationship building and customer retention",
+        ],
+      },
+    ],
   },
   {
     department: "Research and Development (R&D)",
@@ -709,8 +709,8 @@ export const jobDepartments = [
           "Team leadership and coaching",
           "Budget management and resource allocation",
           "Performance tracking and reporting",
-          "Collaboration and partnerships"
-        ]
+          "Collaboration and partnerships",
+        ],
       },
       {
         title: "Research Scientist",
@@ -719,8 +719,8 @@ export const jobDepartments = [
           "Data analysis and interpretation",
           "Product and process development",
           "Performance tracking and reporting",
-          "Collaboration and partnerships"
-        ]
+          "Collaboration and partnerships",
+        ],
       },
       {
         title: "Product Development Engineer",
@@ -729,8 +729,8 @@ export const jobDepartments = [
           "Engineering and technical skills",
           "Performance tracking and reporting",
           "Problem solving and root cause analysis",
-          "Collaboration and partnerships"
-        ]
+          "Collaboration and partnerships",
+        ],
       },
       {
         title: "Process Development Engineer",
@@ -739,8 +739,8 @@ export const jobDepartments = [
           "Engineering and technical skills",
           "Performance tracking and reporting",
           "Problem solving and root cause analysis",
-          "Collaboration and partnerships"
-        ]
+          "Collaboration and partnerships",
+        ],
       },
       {
         title: "R&D Technician",
@@ -749,9 +749,9 @@ export const jobDepartments = [
           "Data collection and analysis",
           "Performance tracking and reporting",
           "Collaboration and partnerships",
-          "Problem solving and root cause analysis"
-        ]
-      }
-    ]
-  }
+          "Problem solving and root cause analysis",
+        ],
+      },
+    ],
+  },
 ];
