@@ -7,10 +7,10 @@ Users can view detailed employee profiles, which include all employee informatio
 <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
 
 ## Employees Page
-<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
+<img src='https://i.postimg.cc/150v898G/Employee-Directory-Employees.png' border='0' alt='Employee-Directory-Employees'/>
 
 ## Departments Page
-<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
+<img src='https://i.postimg.cc/qvT9FgZS/Employee-Directory-Departments.png' border='0' alt='Employee-Directory-Departments'/>
 
 ## Projects Page
 <img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
