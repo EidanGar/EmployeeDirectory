@@ -19,7 +19,7 @@ function randomSubarray(array: any[]) {
 }
 
 const fetchEmployees = async () => {
-  const userFecthApi = "https://api.coinpaprika.com/v1/tickers";
+  const userFecthApi = "https://randomuser.me/api/?results=100";
 
   try {
     const userFetchResponse = await fetch(userFecthApi);
@@ -28,6 +28,7 @@ const fetchEmployees = async () => {
     const users = userData.results;
 
     const employees = [];
+    let id = 0;
 
     for (let user of users) {
       const name = `${user.name.first} ${user.name.last}`;
@@ -61,12 +62,15 @@ const fetchEmployees = async () => {
         description,
         skills,
         age,
-        isWorker
+        isWorker,
+        id
       };
+
+      id++;
 
       employees.push(employee);
     }
-
+    
     return employees;
   } catch (error) {
     if (error instanceof Error) {

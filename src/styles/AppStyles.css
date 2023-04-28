@@ -19,7 +19,8 @@
 
 .employees-container {
   width: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -36,6 +37,7 @@
 }
 
 .card-format {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
 }
 
@@ -177,6 +179,61 @@
   overflow-y: scroll;
 }
 
+/* Loading */
+
+.loading {
+  position: relative;
+  margin: 40px auto;
+  width: 100px;
+  height: 100px;
+  z-index: 2;
+}
+
+.loading hr {
+  border: 0;
+  margin: 0;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  border-radius: 50%;
+  animation: spin 2s ease infinite;
+}
+
+.loading :first-child {
+  background: #19a68c;
+  animation-delay: -1.5s;
+}
+
+.loading :nth-child(2) {
+  background: #f63d3a;
+  animation-delay: -1s;
+}
+
+.loading :nth-child(3) {
+  background: #fda543;
+  animation-delay: -0.5s;
+}
+
+.loading :last-child {
+  background: #193b48;
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(160%);
+  }
+  50% {
+    transform: translate(160%, 160%);
+  }
+  75% {
+    transform: translate(0, 160%);
+  }
+}
+
 @media (max-width: 901px) {
   .nav-item-text {
     display: none;
@@ -241,5 +298,4 @@
   .navigation-item-icon {
     width: 100%;
   }
-
 }
