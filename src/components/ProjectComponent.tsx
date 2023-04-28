@@ -13,7 +13,7 @@ const ProjectComponent = ({
   progress,
   timeline,
   department,
-  id
+  id,
 }: Project) => {
   const dispatch = useDispatch();
   const { projects } = useSelector<
@@ -28,22 +28,22 @@ const ProjectComponent = ({
     const updateProjects = [
       ...projects.slice(0, id),
       newProject,
-      ...projects.slice(id + 1)
+      ...projects.slice(id + 1),
     ];
     dispatch({
       type: Types.ApplicationReducerTypes.PROJECT,
-      payload: updateProjects
+      payload: updateProjects,
     });
   };
 
   const deleteProject = () => {
     const updateProjects = [
       ...projects.slice(0, id),
-      ...projects.slice(id + 1)
+      ...projects.slice(id + 1),
     ];
     dispatch({
       type: Types.ApplicationReducerTypes.PROJECT,
-      payload: updateProjects
+      payload: updateProjects,
     });
   };
 
@@ -103,14 +103,13 @@ const ProjectComponent = ({
             </div>
           </Link>
           <div className="d-flex gap-1 flex-column justify-content-start align-items-start">
+            <p className="mb-0 text-gray-700">Project Description:</p>
             <p style={{ fontSize: "1.2rem" }}>{projectInfo.description}</p>
-            <div className="d-flex w-100 gap-3 align-items-center flex-wrap">
-              <h6 className="text-gray-900 mb-2">
+            <div className="d-flex w-100 gap-3 flex-wrap">
+              <h6 className="text-gray-900">
                 Start Date: {timeline.startDate}
               </h6>
-              <h6 className="text-gray-900 mb-2">
-                Deadline: {timeline.deadline}
-              </h6>
+              <h6 className="text-gray-900">Deadline: {timeline.deadline}</h6>
             </div>
             <h6 className="text-gray-900 mb-0">{department} Department</h6>
           </div>
