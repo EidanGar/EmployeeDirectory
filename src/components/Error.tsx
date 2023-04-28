@@ -9,7 +9,7 @@ const Error = () => {
   >((state) => state.application);
 
   return (
-    <Alert className="position-absolute top-center" variant="danger">
+    <Alert className="position-fixed top-center" variant="danger">
       {appError.reason}
     </Alert>
   );
