@@ -5,9 +5,10 @@ interface AccordionProps {
   name: string;
   children?: JSX.Element | JSX.Element[];
   className?: string;
+  divider?: boolean;
 }
 
-const Accordion = ({ name, children, className }: AccordionProps) => {
+const Accordion = ({ name, children, className, divider }: AccordionProps) => {
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -32,8 +33,8 @@ const Accordion = ({ name, children, className }: AccordionProps) => {
         } flex-column gap-2 px-3 mt-2`}
       >
         {children}
+        {(divider ?? true) && <hr />}
       </div>
-      {isShown && <hr />}
     </div>
   );
 };

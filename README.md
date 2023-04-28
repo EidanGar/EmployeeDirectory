@@ -13,7 +13,7 @@ Users can view detailed employee profiles, which include all employee informatio
 <img src='https://i.postimg.cc/qvT9FgZS/Employee-Directory-Departments.png' border='0' alt='Employee-Directory-Departments'/>
 
 ## Projects Page
-<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
+<img src='https://i.postimg.cc/nhT5Hw5j/Employee-Directory-Projects.png' border='0' alt='Employee-Directory-Projects'/>
 
 ## Help Page
-<img src='https://i.postimg.cc/Zn8wyrpG/Employee-Directory-Scroll-SS.png' border='0' alt='Employee-Directory-Scroll-SS'/>
+<img src='https://i.postimg.cc/xd3ZdjdP/Employee-Directory-Help.png' border='0' alt='Employee-Directory-Help'/>
