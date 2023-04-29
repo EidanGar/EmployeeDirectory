@@ -82,6 +82,7 @@ export interface Employee {
   description: string;
   age: number;
   isWorker: boolean;
+  id?: number;
 }
 
 export interface SelectOption {

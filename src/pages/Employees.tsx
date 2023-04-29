@@ -14,7 +14,7 @@ const Employees = () => {
     jobTitle,
     workStatus,
     ageRange,
-    displayFormat
+    displayFormat,
   } = useSelector<Types.CombinedReducers, Types.SearchReducerState>(
     (state) => state.search
   );
@@ -69,10 +69,10 @@ const Employees = () => {
         </div>
       </div>
       <div
-        className={`employees-container ${
+        className={`employees ${
           displayFormat === Types.EmployeeCardsFormat.CARD
-            ? "card-format"
-            : "row-format"
+            ? "employees--cards"
+            : "employees--rows"
         }`}
       >
         {filterEmplyees(employeeList).map((employee, idx) => (
