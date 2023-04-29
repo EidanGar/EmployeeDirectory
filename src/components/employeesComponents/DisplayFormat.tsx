@@ -27,9 +27,9 @@ const DisplayFormat = () => {
     <div className="card-display d-flex">
       <div
         onClick={setCardFormat}
-        className={`card-display-format ${
+        className={`display--cards ${
           displayFormat === Types.EmployeeCardsFormat.CARD
-            ? "selected-card-format"
+            ? "selected--format"
             : ""
         }`}
       >
@@ -37,9 +37,9 @@ const DisplayFormat = () => {
       </div>
       <div
         onClick={setRowFormat}
-        className={`card-display-format ${
+        className={`display--cards ${
           displayFormat === Types.EmployeeCardsFormat.ROW
-            ? "selected-card-format"
+            ? "selected--format"
             : ""
         }`}
       >

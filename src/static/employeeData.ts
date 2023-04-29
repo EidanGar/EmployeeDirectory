@@ -305,453 +305,440 @@ export const softSkills = [
   "Humor",
 ];
 
-export const jobDepartments = [
-  {
-    department: "Human Resources (HR)",
-    jobs: [
-      {
-        title: "HR Manager",
-        hardSkills: [
-          "HR policies and regulations",
-          "Employee relations",
-          "Performance management",
-          "Recruitment and selection",
-          "Compensation and benefits administration",
-        ],
-      },
-      {
-        title: "HR Generalist",
-        hardSkills: [
-          "HR administration",
-          "Employee relations",
-          "Performance management",
-          "Recruitment and selection",
-          "Compensation and benefits administration",
-        ],
-      },
-      {
-        title: "Recruiter",
-        hardSkills: [
-          "Sourcing and interviewing techniques",
-          "Employee branding",
-          "Talent acquisition and retention strategies",
-          "Data analysis and reporting",
-          "Employment law compliance",
-        ],
-      },
-      {
-        title: "Talent Acquisition Specialist",
-        hardSkills: [
-          "Sourcing and interviewing techniques",
-          "Employee branding",
-          "Talent acquisition and retention strategies",
-          "Data analysis and reporting",
-          "Employment law compliance",
-        ],
-      },
-      {
-        title: "Benefits Specialist",
-        hardSkills: [
-          "Benefits administration",
-          "Employee benefits counseling",
-          "Insurance and benefits laws and regulations",
-          "Benefits plan design and analysis",
-          "Data analysis and reporting",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Finance",
-    jobs: [
-      {
-        title: "Financial Analyst",
-        hardSkills: [
-          "Financial modeling and analysis",
-          "Data analysis and reporting",
-          "Budgeting and forecasting",
-          "Investment analysis and portfolio management",
-          "Financial statements and reporting",
-        ],
-      },
-      {
-        title: "Accountant",
-        hardSkills: [
-          "Bookkeeping and accounting principles",
-          "Financial statements preparation",
-          "Tax compliance and planning",
-          "Cost accounting",
-          "Auditing and compliance",
-        ],
-      },
-      {
-        title: "Financial Manager",
-        hardSkills: [
-          "Financial analysis and decision making",
-          "Budgeting and forecasting",
-          "Risk management",
-          "Investment analysis and portfolio management",
-          "Financial statements and reporting",
-        ],
-      },
-      {
-        title: "Budget Analyst",
-        hardSkills: [
-          "Budgeting and forecasting",
-          "Cost analysis and control",
-          "Financial planning and analysis",
-          "Data analysis and reporting",
-          "Budget preparation and monitoring",
-        ],
-      },
-      {
-        title: "Controller",
-        hardSkills: [
-          "Financial statements preparation",
-          "Financial analysis and reporting",
-          "Internal controls and compliance",
-          "Budget preparation and monitoring",
-          "Auditing and compliance",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Marketing",
-    jobs: [
-      {
-        title: "Marketing Manager",
-        hardSkills: [
-          "Marketing strategy and planning",
-          "Brand management",
-          "Market research and analysis",
-          "Campaign planning and execution",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Brand Manager",
-        hardSkills: [
-          "Brand strategy and management",
-          "Product positioning and messaging",
-          "Marketing communications and advertising",
-          "Consumer insights and market research",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Marketing Coordinator",
-        hardSkills: [
-          "Marketing operations and support",
-          "Event planning and execution",
-          "Marketing communications and advertising",
-          "Data analysis and reporting",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Digital Marketing Specialist",
-        hardSkills: [
-          "Digital marketing strategy and planning",
-          "Search engine optimization (SEO)",
-          "Search engine marketing (SEM)",
-          "Social media marketing",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Product Manager",
-        hardSkills: [
-          "Product strategy and planning",
-          "Market research and analysis",
-          "Product development and management",
-          "Product positioning and messaging",
-          "Performance tracking and reporting",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Operations",
-    jobs: [
-      {
-        title: "Operations Manager",
-        hardSkills: [
-          "Operations strategy and planning",
-          "Production planning and control",
-          "Supply chain management",
-          "Inventory management",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Supply Chain Manager",
-        hardSkills: [
-          "Supply chain strategy and planning",
-          "Procurement and sourcing",
-          "Inventory management",
-          "Logistics and transportation management",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Production Manager",
-        hardSkills: [
-          "Production planning and control",
-          "Quality control and assurance",
-          "Equipment maintenance and management",
-          "Process improvement and optimization",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Logistics Manager",
-        hardSkills: [
-          "Logistics and transportation strategy and planning",
-          "Inventory management",
-          "Warehouse management",
-          "Freight and shipping management",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Quality Control Manager",
-        hardSkills: [
-          "Quality control and assurance strategy and planning",
-          "Quality management systems",
-          "Inspection and testing techniques",
-          "Quality data analysis and reporting",
-          "Performance tracking and reporting",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Information Technology (IT)",
-    jobs: [
-      {
-        title: "IT Manager",
-        hardSkills: [
-          "IT strategy and planning",
-          "Project management",
-          "Network and system administration",
-          "Software development",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Network Administrator",
-        hardSkills: [
-          "Network design and implementation",
-          "Network security and firewall management",
-          "Router and switch configuration",
-          "Remote access and VPN setup",
-          "Performance monitoring and reporting",
-        ],
-      },
-      {
-        title: "Systems Analyst",
-        hardSkills: [
-          "Systems analysis and design",
-          "Software development and programming",
-          "Data analysis and reporting",
-          "Systems testing and debugging",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Database Administrator",
-        hardSkills: [
-          "Database design and implementation",
-          "SQL programming and database management",
-          "Data backup and recovery",
-          "Performance tuning and optimization",
-          "Performance monitoring and reporting",
-        ],
-      },
-      {
-        title: "Software Developer",
-        hardSkills: [
-          "Software design and development",
-          "Software testing and debugging",
-          "Data analysis and reporting",
-          "Performance tracking and reporting",
-          "JavaScript",
-          "Python",
-          "R",
-          "C#",
-          "C/C++",
-          "Ruby",
-          "Kotlin",
-          "React",
-          "Typescript",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Sales",
-    jobs: [
-      {
-        title: "Sales Manager",
-        hardSkills: [
-          "Sales strategy and planning",
-          "Account management and development",
-          "Sales team leadership and coaching",
-          "Performance tracking and reporting",
-          "Business development and relationship building",
-        ],
-      },
-      {
-        title: "Account Manager",
-        hardSkills: [
-          "Account management and development",
-          "Relationship building and customer service",
-          "Sales forecasting and quota attainment",
-          "Performance tracking and reporting",
-          "Product and service knowledge",
-        ],
-      },
-      {
-        title: "Sales Representative",
-        hardSkills: [
-          "Product and service knowledge",
-          "Lead generation and qualification",
-          "Sales presentations and demonstrations",
-          "Negotiation and closing",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Business Development Manager",
-        hardSkills: [
-          "Business development and relationship building",
-          "Market research and analysis",
-          "Lead generation and qualification",
-          "Sales forecasting and quota attainment",
-          "Performance tracking and reporting",
-        ],
-      },
-      {
-        title: "Territory Sales Manager",
-        hardSkills: [
-          "Territory management and sales planning",
-          "Account management and development",
-          "Sales forecasting and quota attainment",
-          "Performance tracking and reporting",
-          "Business development and relationship building",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Customer Service",
-    jobs: [
-      {
-        title: "Customer Service Manager",
-        hardSkills: [
-          "Customer service strategy and planning",
-          "Team leadership and coaching",
-          "Problem solving and escalation management",
-          "Performance tracking and reporting",
-          "Relationship building and customer retention",
-        ],
-      },
-      {
-        title: "Customer Service Representative",
-        hardSkills: [
-          "Product and service knowledge",
-          "Customer service and support",
-          "Problem solving and escalation management",
-          "Performance tracking and reporting",
-          "Relationship building and customer retention",
-        ],
-      },
-      {
-        title: "Technical Support Specialist",
-        hardSkills: [
-          "Product and service knowledge",
-          "Technical support and troubleshooting",
-          "Problem solving and escalation management",
-          "Performance tracking and reporting",
-          "Relationship building and customer retention",
-        ],
-      },
-      {
-        title: "Call Center Manager",
-        hardSkills: [
-          "Call center operations and management",
-          "Team leadership and coaching",
-          "Performance tracking and reporting",
-          "Problem solving and escalation management",
-          "Relationship building and customer retention",
-        ],
-      },
-      {
-        title: "Help Desk Specialist",
-        hardSkills: [
-          "Product and service knowledge",
-          "Technical support and troubleshooting",
-          "Performance tracking and reporting",
-          "Problem solving and escalation management",
-          "Relationship building and customer retention",
-        ],
-      },
-    ],
-  },
-  {
-    department: "Research and Development (R&D)",
-    jobs: [
-      {
-        title: "R&D Manager",
-        hardSkills: [
-          "Research and development strategy and planning",
-          "Team leadership and coaching",
-          "Budget management and resource allocation",
-          "Performance tracking and reporting",
-          "Collaboration and partnerships",
-        ],
-      },
-      {
-        title: "Research Scientist",
-        hardSkills: [
-          "Research design and execution",
-          "Data analysis and interpretation",
-          "Product and process development",
-          "Performance tracking and reporting",
-          "Collaboration and partnerships",
-        ],
-      },
-      {
-        title: "Product Development Engineer",
-        hardSkills: [
-          "Product design and development",
-          "Engineering and technical skills",
-          "Performance tracking and reporting",
-          "Problem solving and root cause analysis",
-          "Collaboration and partnerships",
-        ],
-      },
-      {
-        title: "Process Development Engineer",
-        hardSkills: [
-          "Process design and development",
-          "Engineering and technical skills",
-          "Performance tracking and reporting",
-          "Problem solving and root cause analysis",
-          "Collaboration and partnerships",
-        ],
-      },
-      {
-        title: "R&D Technician",
-        hardSkills: [
-          "Technical skills and laboratory techniques",
-          "Data collection and analysis",
-          "Performance tracking and reporting",
-          "Collaboration and partnerships",
-          "Problem solving and root cause analysis",
-        ],
-      },
-    ],
-  },
-];
+export const jobDepartments = {
+  "Human Resources (HR)": [
+    {
+      jobTitle: "HR Manager",
+      hardSkills: [
+        "HR policies and regulations",
+        "Employee relations",
+        "Performance management",
+        "Recruitment and selection",
+        "Compensation and benefits administration",
+      ],
+    },
+    {
+      jobTitle: "HR Generalist",
+      hardSkills: [
+        "HR administration",
+        "Employee relations",
+        "Performance management",
+        "Recruitment and selection",
+        "Compensation and benefits administration",
+      ],
+    },
+    {
+      jobTitle: "Recruiter",
+      hardSkills: [
+        "Sourcing and interviewing techniques",
+        "Employee branding",
+        "Talent acquisition and retention strategies",
+        "Data analysis and reporting",
+        "Employment law compliance",
+      ],
+    },
+    {
+      jobTitle: "Talent Acquisition Specialist",
+      hardSkills: [
+        "Sourcing and interviewing techniques",
+        "Employee branding",
+        "Talent acquisition and retention strategies",
+        "Data analysis and reporting",
+        "Employment law compliance",
+      ],
+    },
+    {
+      jobTitle: "Benefits Specialist",
+      hardSkills: [
+        "Benefits administration",
+        "Employee benefits counseling",
+        "Insurance and benefits laws and regulations",
+        "Benefits plan design and analysis",
+        "Data analysis and reporting",
+      ],
+    },
+  ],
+  Finance: [
+    {
+      jobTitle: "Financial Analyst",
+      hardSkills: [
+        "Financial modeling and analysis",
+        "Data analysis and reporting",
+        "Budgeting and forecasting",
+        "Investment analysis and portfolio management",
+        "Financial statements and reporting",
+      ],
+    },
+    {
+      jobTitle: "Accountant",
+      hardSkills: [
+        "Bookkeeping and accounting principles",
+        "Financial statements preparation",
+        "Tax compliance and planning",
+        "Cost accounting",
+        "Auditing and compliance",
+      ],
+    },
+    {
+      jobTitle: "Financial Manager",
+      hardSkills: [
+        "Financial analysis and decision making",
+        "Budgeting and forecasting",
+        "Risk management",
+        "Investment analysis and portfolio management",
+        "Financial statements and reporting",
+      ],
+    },
+    {
+      jobTitle: "Budget Analyst",
+      hardSkills: [
+        "Budgeting and forecasting",
+        "Cost analysis and control",
+        "Financial planning and analysis",
+        "Data analysis and reporting",
+        "Budget preparation and monitoring",
+      ],
+    },
+    {
+      jobTitle: "Controller",
+      hardSkills: [
+        "Financial statements preparation",
+        "Financial analysis and reporting",
+        "Internal controls and compliance",
+        "Budget preparation and monitoring",
+        "Auditing and compliance",
+      ],
+    },
+  ],
+  Marketing: [
+    {
+      jobTitle: "Marketing Manager",
+      hardSkills: [
+        "Marketing strategy and planning",
+        "Brand management",
+        "Market research and analysis",
+        "Campaign planning and execution",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Brand Manager",
+      hardSkills: [
+        "Brand strategy and management",
+        "Product positioning and messaging",
+        "Marketing communications and advertising",
+        "Consumer insights and market research",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Marketing Coordinator",
+      hardSkills: [
+        "Marketing operations and support",
+        "Event planning and execution",
+        "Marketing communications and advertising",
+        "Data analysis and reporting",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Digital Marketing Specialist",
+      hardSkills: [
+        "Digital marketing strategy and planning",
+        "Search engine optimization (SEO)",
+        "Search engine marketing (SEM)",
+        "Social media marketing",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Product Manager",
+      hardSkills: [
+        "Product strategy and planning",
+        "Market research and analysis",
+        "Product development and management",
+        "Product positioning and messaging",
+        "Performance tracking and reporting",
+      ],
+    },
+  ],
+  Operations: [
+    {
+      jobTitle: "Operations Manager",
+      hardSkills: [
+        "Operations strategy and planning",
+        "Production planning and control",
+        "Supply chain management",
+        "Inventory management",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Supply Chain Manager",
+      hardSkills: [
+        "Supply chain strategy and planning",
+        "Procurement and sourcing",
+        "Inventory management",
+        "Logistics and transportation management",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Production Manager",
+      hardSkills: [
+        "Production planning and control",
+        "Quality control and assurance",
+        "Equipment maintenance and management",
+        "Process improvement and optimization",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Logistics Manager",
+      hardSkills: [
+        "Logistics and transportation strategy and planning",
+        "Inventory management",
+        "Warehouse management",
+        "Freight and shipping management",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Quality Control Manager",
+      hardSkills: [
+        "Quality control and assurance strategy and planning",
+        "Quality management systems",
+        "Inspection and testing techniques",
+        "Quality data analysis and reporting",
+        "Performance tracking and reporting",
+      ],
+    },
+  ],
+  "Information Technology (IT)": [
+    {
+      jobTitle: "IT Manager",
+      hardSkills: [
+        "IT strategy and planning",
+        "Project management",
+        "Network and system administration",
+        "Software development",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Network Administrator",
+      hardSkills: [
+        "Network design and implementation",
+        "Network security and firewall management",
+        "Router and switch configuration",
+        "Remote access and VPN setup",
+        "Performance monitoring and reporting",
+      ],
+    },
+    {
+      jobTitle: "Systems Analyst",
+      hardSkills: [
+        "Systems analysis and design",
+        "Software development and programming",
+        "Data analysis and reporting",
+        "Systems testing and debugging",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Database Administrator",
+      hardSkills: [
+        "Database design and implementation",
+        "SQL programming and database management",
+        "Data backup and recovery",
+        "Performance tuning and optimization",
+        "Performance monitoring and reporting",
+      ],
+    },
+    {
+      jobTitle: "Software Developer",
+      hardSkills: [
+        "Software design and development",
+        "Software testing and debugging",
+        "Data analysis and reporting",
+        "Performance tracking and reporting",
+        "JavaScript",
+        "Python",
+        "R",
+        "C#",
+        "C/C++",
+        "Ruby",
+        "Kotlin",
+        "React",
+        "Typescript",
+      ],
+    },
+  ],
+  Sales: [
+    {
+      jobTitle: "Sales Manager",
+      hardSkills: [
+        "Sales strategy and planning",
+        "Account management and development",
+        "Sales team leadership and coaching",
+        "Performance tracking and reporting",
+        "Business development and relationship building",
+      ],
+    },
+    {
+      jobTitle: "Account Manager",
+      hardSkills: [
+        "Account management and development",
+        "Relationship building and customer service",
+        "Sales forecasting and quota attainment",
+        "Performance tracking and reporting",
+        "Product and service knowledge",
+      ],
+    },
+    {
+      jobTitle: "Sales Representative",
+      hardSkills: [
+        "Product and service knowledge",
+        "Lead generation and qualification",
+        "Sales presentations and demonstrations",
+        "Negotiation and closing",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Business Development Manager",
+      hardSkills: [
+        "Business development and relationship building",
+        "Market research and analysis",
+        "Lead generation and qualification",
+        "Sales forecasting and quota attainment",
+        "Performance tracking and reporting",
+      ],
+    },
+    {
+      jobTitle: "Territory Sales Manager",
+      hardSkills: [
+        "Territory management and sales planning",
+        "Account management and development",
+        "Sales forecasting and quota attainment",
+        "Performance tracking and reporting",
+        "Business development and relationship building",
+      ],
+    },
+  ],
+  "Customer Service": [
+    {
+      jobTitle: "Customer Service Manager",
+      hardSkills: [
+        "Customer service strategy and planning",
+        "Team leadership and coaching",
+        "Problem solving and escalation management",
+        "Performance tracking and reporting",
+        "Relationship building and customer retention",
+      ],
+    },
+    {
+      jobTitle: "Customer Service Representative",
+      hardSkills: [
+        "Product and service knowledge",
+        "Customer service and support",
+        "Problem solving and escalation management",
+        "Performance tracking and reporting",
+        "Relationship building and customer retention",
+      ],
+    },
+    {
+      jobTitle: "Technical Support Specialist",
+      hardSkills: [
+        "Product and service knowledge",
+        "Technical support and troubleshooting",
+        "Problem solving and escalation management",
+        "Performance tracking and reporting",
+        "Relationship building and customer retention",
+      ],
+    },
+    {
+      jobTitle: "Call Center Manager",
+      hardSkills: [
+        "Call center operations and management",
+        "Team leadership and coaching",
+        "Performance tracking and reporting",
+        "Problem solving and escalation management",
+        "Relationship building and customer retention",
+      ],
+    },
+    {
+      jobTitle: "Help Desk Specialist",
+      hardSkills: [
+        "Product and service knowledge",
+        "Technical support and troubleshooting",
+        "Performance tracking and reporting",
+        "Problem solving and escalation management",
+        "Relationship building and customer retention",
+      ],
+    },
+  ],
+  "Research and Development (R&D)": [
+    {
+      jobTitle: "R&D Manager",
+      hardSkills: [
+        "Research and development strategy and planning",
+        "Team leadership and coaching",
+        "Budget management and resource allocation",
+        "Performance tracking and reporting",
+        "Collaboration and partnerships",
+      ],
+    },
+    {
+      jobTitle: "Research Scientist",
+      hardSkills: [
+        "Research design and execution",
+        "Data analysis and interpretation",
+        "Product and process development",
+        "Performance tracking and reporting",
+        "Collaboration and partnerships",
+      ],
+    },
+    {
+      jobTitle: "Product Development Engineer",
+      hardSkills: [
+        "Product design and development",
+        "Engineering and technical skills",
+        "Performance tracking and reporting",
+        "Problem solving and root cause analysis",
+        "Collaboration and partnerships",
+      ],
+    },
+    {
+      jobTitle: "Process Development Engineer",
+      hardSkills: [
+        "Process design and development",
+        "Engineering and technical skills",
+        "Performance tracking and reporting",
+        "Problem solving and root cause analysis",
+        "Collaboration and partnerships",
+      ],
+    },
+    {
+      jobTitle: "R&D Technician",
+      hardSkills: [
+        "Technical skills and laboratory techniques",
+        "Data collection and analysis",
+        "Performance tracking and reporting",
+        "Collaboration and partnerships",
+        "Problem solving and root cause analysis",
+      ],
+    },
+  ],
+};
+
+export const departments = Object.keys(jobDepartments);
+export const allJobs = departments
+  .map((department) => jobDepartments[department].map((job) => job.jobTitle))
+  .flat(1);
+export const allDepartmentsAndJobs = departments.map((department) =>
+  jobDepartments[department].map((job) => `${department}-${job.jobTitle}`)
+);
+export const allHardSkills = departments
+  .map((department) => jobDepartments[department].map((job) => job.hardSkills))
+  .flat(2);

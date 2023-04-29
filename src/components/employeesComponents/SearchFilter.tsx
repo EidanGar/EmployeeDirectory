@@ -6,6 +6,7 @@ import { MultiValue } from "react-select";
 import * as Types from "../../types";
 import { useDispatch } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
+import { GoSettings } from "react-icons/go";
 
 const allJobData = Data.jobDepartments.reduce(
   (a, b) => a.concat(b.jobs.map((job) => job.title)),
@@ -21,7 +22,7 @@ const allSkillOptions: Types.SelectOption[] = Data.jobDepartments
       value: skill,
       label: skill,
       color: "#00B8D9",
-      isFixed: true
+      isFixed: true,
     };
   });
 
@@ -38,8 +39,8 @@ const defaultFilterState: advancedFilterState = {
   skillsSelected: [],
   ageRange: {
     min: 0,
-    max: 100
-  }
+    max: 100,
+  },
 };
 
 const SearchFilter = () => {
@@ -56,19 +57,19 @@ const SearchFilter = () => {
   const filterEmployees = () => {
     dispatch({
       type: Types.FilterActionPayload.SKILLS,
-      payload: filter.skillsSelected
+      payload: filter.skillsSelected,
     });
     dispatch({
       type: Types.FilterActionPayload.TITLE,
-      payload: filter.jobTitle
+      payload: filter.jobTitle,
     });
     dispatch({
       type: Types.FilterActionPayload.WORKING,
-      payload: filter.workStatus
+      payload: filter.workStatus,
     });
     dispatch({
       type: Types.FilterActionPayload.AGE,
-      payload: filter.ageRange
+      payload: filter.ageRange,
     });
     setShow(false);
   };
@@ -135,12 +136,12 @@ const SearchFilter = () => {
         onClick={handleShow}
         className="text-nowrap w-100"
       >
-        Filter
+        <GoSettings />
       </Button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header>
-          <Modal.Title>Filter</Modal.Title>
+          <Modal.Title>Filter Employees</Modal.Title>
           <Button onClick={handleClose} variant="btn-secondary">
             <AiOutlineClose />
           </Button>

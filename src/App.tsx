@@ -28,10 +28,12 @@ const App = () => {
 
   useEffect(() => {
     const setState = async () => {
-      if (employeeList.length !== 0) return;
       dispatch({ type: Types.ApplicationReducerTypes.LOADING, payload: true });
+      console.log("Fetching data.");
+
       try {
         const fetchResult = await fetchEmployees();
+        console.log(fetchResult);
 
         if (fetchResult && !("error" in fetchResult)) {
           dispatch({
@@ -44,7 +46,7 @@ const App = () => {
       } catch (error) {
         dispatch({
           type: Types.ApplicationReducerTypes.ERROR,
-          payload: { error: true, reason: "Failed to fetch employees" },
+          payload: { error: true, reason: error.message },
         });
       }
       setTimeout(() => {
@@ -55,6 +57,7 @@ const App = () => {
       }, 200);
     };
 
+    console.log("Rendering Application.");
     setState();
   }, [employeeList.length, dispatch]);
 

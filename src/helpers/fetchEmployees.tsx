@@ -1,8 +1,4 @@
-import {
-  jobDepartments,
-  softSkills,
-  employeeDescriptions,
-} from "../static/employeeData";
+import * as Data from "../static/employeeData";
 
 function randomSubarray(array: any[]) {
   let result: string[] = [];
@@ -30,21 +26,26 @@ const fetchEmployees = async () => {
     const employees = [];
     let id = 0;
 
+    const { departments, jobDepartments, employeeDescriptions } = Data;
+
     for (let user of users) {
       const name = `${user.name.first} ${user.name.last}`;
-      const jobDeparment =
-        jobDepartments[Math.floor(Math.random() * jobDepartments.length)];
-      const department = jobDeparment.department;
-      const job = jobDeparment.jobs[Math.floor(Math.random() * 5)];
-      const jobData = { department, jobTitle: job.title };
+      const department =
+        departments[Math.floor(Math.random() * departments.length)];
+      const job =
+        jobDepartments[department][
+          Math.floor(Math.random() * jobDepartments[department].length)
+        ];
+      const { jobTitle, hardSkills } = job;
+      const jobData = { department, jobTitle };
       const contact = { email: user?.email ?? "", phone: user?.phone ?? "" };
       let pictures = {
         iconUrl: user.picture.thumbnail,
         imageUrl: user.picture.large,
       };
       const skills = {
-        softSkills: randomSubarray(softSkills),
-        hardSkills: randomSubarray(job.hardSkills),
+        softSkills: randomSubarray(Data.softSkills),
+        hardSkills: randomSubarray(hardSkills),
       };
       const description = `${name} is ${
         employeeDescriptions[

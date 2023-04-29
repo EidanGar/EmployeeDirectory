@@ -1,31 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import CreatableSelect from "react-select/creatable";
+import { MultiValue } from "react-select";
 import * as Types from "../../types";
 import * as Data from "../../static/employeeData";
-
-const initialEmployeeState: Types.Employee = {
-  name: "",
-  age: NaN,
-  pictures: {
-    iconUrl: "",
-    imageUrl: ""
-  },
-  contact: {
-    email: "",
-    phone: ""
-  },
-  description: "",
-  isWorker: true,
-  jobData: {
-    jobTitle: "",
-    department: ""
-  },
-  skills: {
-    softSkills: [],
-    hardSkills: []
-  }
-};
 
 const NewEmployee = () => {
   const dispatch = useDispatch();
@@ -34,10 +13,65 @@ const NewEmployee = () => {
     Types.ApplicationReducerState
   >((state) => state.application);
 
-  const [employee, setEmployee] = useState<Types.Employee>(
-    initialEmployeeState
+  const allSoftSkillOptions: Types.SelectOption[] = Data.softSkills.map(
+    (skill) => {
+      return {
+        value: skill,
+        label: skill,
+        color: "#00B8D9",
+        isFixed: true,
+      };
+    }
   );
-  const [employeeName, setEmployeeName] = useState<[string, string]>(["", ""]);
+
+  const initialEmployeeState: Types.Employee = {
+    name: "",
+    age: NaN,
+    pictures: {
+      iconUrl: "",
+      imageUrl: "",
+    },
+    contact: {
+      email: "",
+      phone: "",
+    },
+    description: "",
+    isWorker: true,
+    jobData: {
+      jobTitle: "",
+      department: "",
+    },
+    skills: {
+      softSkills: [],
+      hardSkills: [],
+    },
+    id: NaN,
+  };
+
+  const [employee, setEmployee] =
+    useState<Types.Employee>(initialEmployeeState);
+  const [hardSkillOptions, setHardSkillOptions] = useState<string[]>([]);
+
+  const getHardSkillOptions = ({
+    department,
+    jobTitle,
+  }: Types.JobData): Types.SelectOption[] => {
+    console.log(jobTitle);
+    const jobDepartment = Data.jobDepartments[department];
+    const indexOfJob = jobDepartment
+      .map((job) => job.jobTitle)
+      .indexOf(jobTitle);
+    const skills = jobDepartment[indexOfJob].hardSkills;
+
+    setHardSkillOptions(
+      skills.map((skill) => ({
+        value: skill,
+        label: skill,
+        color: "#00B8D9",
+        isFixed: true,
+      }))
+    );
+  };
 
   const handleEmployeeInputChange = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -46,11 +80,8 @@ const NewEmployee = () => {
     const { name, value } = target;
 
     switch (name) {
-      case "firstName":
-        setEmployeeName([value, employeeName[1]]);
-        break;
-      case "lastName":
-        setEmployeeName([employeeName[0], value]);
+      case "name":
+        setEmployee((prev) => ({ ...prev, name: value }));
         break;
       case "email":
       case "phone":
@@ -59,19 +90,14 @@ const NewEmployee = () => {
             ...prev,
             contact: {
               ...prev.contact,
-              [name]: value
-            }
+              [name]: value,
+            },
           };
         });
         break;
       case "age":
       case "description":
-        setEmployee((prev) => {
-          return {
-            ...prev,
-            [name]: value
-          };
-        });
+        setEmployee((prev) => ({ ...prev, [name]: value }));
         break;
       case "pictures":
         setEmployee((prev) => {
@@ -79,8 +105,8 @@ const NewEmployee = () => {
             ...prev,
             pictures: {
               imageUrl: value,
-              iconUrl: value
-            }
+              iconUrl: value,
+            },
           };
         });
         break;
@@ -89,11 +115,29 @@ const NewEmployee = () => {
           return name in prev
             ? {
                 ...prev,
-                [name]: value
+                [name]: value,
               }
             : prev;
         });
     }
+  };
+
+  const handleSoftSkillChange = (
+    s: MultiValue<{
+      value: string;
+      label: string;
+    }>
+  ) => {
+    console.log(s);
+  };
+
+  const handleHardSkillChange = (
+    s: MultiValue<{
+      value: string;
+      label: string;
+    }>
+  ) => {
+    console.log(s);
   };
 
   const handleEmployeeSelectChange = (
@@ -106,31 +150,37 @@ const NewEmployee = () => {
         setEmployee((prev) => {
           return {
             ...prev,
-            [name]: value
+            [name]: value,
           };
         });
         break;
       case "jobTitle":
+        const newJobData = {
+          department: value.split("-")[0],
+          jobTitle: value.split("-")[1],
+        };
         setEmployee((prev) => {
           return {
             ...prev,
-            jobData: {
-              department: value.split("-")[0],
-              jobTitle: value.split("-")[1]
-            }
+            jobData: newJobData,
           };
         });
+        getHardSkillOptions(newJobData);
         break;
     }
   };
 
   const handleEmployeeSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newEmployee = { ...employee, name: employeeName.join(" ") };
+    const newEmployee = {
+      ...employee,
+      name: employeeName.join(" "),
+      id: employeeList.length - 1,
+    };
     const newEmployeeList = [...employeeList, newEmployee];
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
-      payload: newEmployeeList
+      payload: newEmployeeList,
     });
     console.log(`Employee ${employeeName.join(" ")} Added`);
   };
@@ -144,38 +194,29 @@ const NewEmployee = () => {
         onSubmit={handleEmployeeSubmit}
         className="h-100 w-100 d-flex flex-column gap-3 bg-light p-4 rounded"
       >
-        <Form.Group controlId="firstName">
-          <Form.Label>First Name</Form.Label>
+        <Form.Group controlId="name">
+          <Form.Label>Name</Form.Label>
           <Form.Control
             onChange={handleEmployeeInputChange}
-            name="firstName"
+            name="name"
             type="text"
-            placeholder="First Name"
+            placeholder="Your Name"
           />
         </Form.Group>
 
-        <Form.Group controlId="lastName">
-          <Form.Label>Last Name</Form.Label>
-          <Form.Control
-            onChange={handleEmployeeInputChange}
-            name="lastName"
-            type="text"
-            placeholder="Last Name"
-          />
-        </Form.Group>
-
-        <Form.Group controlId="lastName">
+        <Form.Group controlId="age">
           <Form.Label>Age</Form.Label>
           <Form.Control
             onChange={handleEmployeeInputChange}
             name="age"
+            id="age"
             type="number"
             placeholder="Age"
           />
         </Form.Group>
 
         <Form.Group controlId="emailAddress">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>Email Address</Form.Label>
           <Form.Control
             onChange={handleEmployeeInputChange}
             name="email"
@@ -188,7 +229,7 @@ const NewEmployee = () => {
         </Form.Group>
 
         <Form.Group controlId="phoneNumber">
-          <Form.Label>Phone number</Form.Label>
+          <Form.Label>Phone Number</Form.Label>
           <Form.Control
             name="phone"
             type="tel"
@@ -211,24 +252,50 @@ const NewEmployee = () => {
         </Form.Group>
 
         <Form.Group controlId="jobTitle">
-          <Form.Label>Employee Job</Form.Label>
+          <Form.Label>Job Title</Form.Label>
           <Form.Select onChange={handleEmployeeSelectChange} name="jobTitle">
             <option>Job Title</option>
-            {Data.jobDepartments.map((department, idx1) =>
-              department.jobs.map((job, idx2) => (
-                <option value={`${department}-${job}`} key={"" + idx1 + idx2}>
-                  {job.title}
+            {Data.departments.map((department, idx1) =>
+              Data.jobDepartments[department].map((job, idx2) => (
+                <option
+                  value={`${department}-${job.jobTitle}`}
+                  key={"" + idx1 + idx2}
+                >
+                  {job.jobTitle}
                 </option>
               ))
             )}
           </Form.Select>
         </Form.Group>
 
+        <Form.Group controlId="softSkills">
+          <Form.Label>Soft Skills</Form.Label>
+          <CreatableSelect
+            onChange={handleSoftSkillChange}
+            name="softSkills"
+            options={allSoftSkillOptions}
+            isMulti
+            isClearable
+          />
+        </Form.Group>
+
+        <Form.Group controlId="hardSkills">
+          <Form.Label>Hard Skills</Form.Label>
+          <CreatableSelect
+            onChange={handleHardSkillChange}
+            name="hardSkills"
+            options={hardSkillOptions}
+            isDisabled={!employee.jobData.jobTitle}
+            isMulti
+            isClearable
+          />
+        </Form.Group>
+
         <Form.Group controlId="description">
-          <Form.Label>Employee Description</Form.Label>
+          <Form.Label>Description</Form.Label>
           <Form.Control
             as="textarea"
-            placeholder="Describe yourself here"
+            placeholder="Describe employee here"
             style={{ height: "100px" }}
             name="description"
             onChange={handleEmployeeInputChange}
