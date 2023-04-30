@@ -8,14 +8,7 @@ import { useDispatch } from "react-redux";
 import { AiOutlineClose } from "react-icons/ai";
 import { GoSettings } from "react-icons/go";
 
-const allJobData = Data.jobDepartments.reduce(
-  (a, b) => a.concat(b.jobs.map((job) => job.title)),
-  [] as string[]
-);
-
-const allSkillOptions: Types.SelectOption[] = Data.jobDepartments
-  .map((a) => a.jobs.map((b) => b.hardSkills))
-  .flat(2)
+const allSkillOptions: Types.SelectOption[] = Data.allHardSkills
   .concat(...Data.softSkills)
   .map((skill) => {
     return {
@@ -52,9 +45,11 @@ const SearchFilter = () => {
     setShow(false);
     setFilter(defaultFilterState);
   };
+
   const handleShow = () => setShow(true);
 
   const filterEmployees = () => {
+    dispatch({ type: Types.FilterActionPayload.PAGE, payload: 1 });
     dispatch({
       type: Types.FilterActionPayload.SKILLS,
       payload: filter.skillsSelected,
@@ -72,6 +67,11 @@ const SearchFilter = () => {
       payload: filter.ageRange,
     });
     setShow(false);
+  };
+
+  const clearFilter = () => {
+    setFilter(defaultFilterState);
+    filterEmployees();
   };
 
   const handgleAgeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -95,10 +95,7 @@ const SearchFilter = () => {
     }>
   ) => {
     const allSkillsStrings = new Set(
-      Data.jobDepartments
-        .map((a) => a.jobs.map((b) => b.hardSkills))
-        .flat(2)
-        .concat(...Data.softSkills)
+      Data.allHardSkills.concat(...Data.softSkills)
     );
     if (e.length && allSkillsStrings.has(e[e.length - 1].value)) {
       const skillsSelected = [...filter.skillsSelected, e[e.length - 1].value];
@@ -159,7 +156,7 @@ const SearchFilter = () => {
                 value={filter.jobTitle ?? ""}
               >
                 <option value="">Any</option>
-                {allJobData.map((job: string, i: number) => (
+                {Data.allJobs.map((job: string, i: number) => (
                   <option key={i} value={job}>
                     {job}
                   </option>
@@ -167,10 +164,10 @@ const SearchFilter = () => {
               </Form.Select>
             </div>
             <div>
-              <Form.Label htmlFor="skillOptiosSelect">Skills</Form.Label>
+              <Form.Label htmlFor="skillOptionsSelect">Skills</Form.Label>
               <CreatableSelect
                 onChange={handleSkillChange}
-                id="skillOptiosSelect"
+                id="skillOptionsSelect"
                 options={allSkillOptions}
                 isMulti
                 isClearable
@@ -215,7 +212,7 @@ const SearchFilter = () => {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={clearFilter}>
             Clear
           </Button>
           <Button variant="primary" onClick={filterEmployees}>
