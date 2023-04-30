@@ -35,7 +35,7 @@ const Pagination = ({ employeesCount }: { employeesCount: number }) => {
   };
 
   return (
-    <div className="d-flex w-100 p-3 pt-5 align-items-center justify-content-center gap-4">
+    <div className="d-flex w-100 p-3 pt-5 align-items-center justify-content-center gap-sm-4 gap-3">
       {arrayFromNumber(Math.ceil(employeesCount / 20)).map((page, idx) => (
         <Page key={idx} page={page} />
       ))}

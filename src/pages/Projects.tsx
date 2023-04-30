@@ -39,9 +39,7 @@ const Projects = () => {
 
   const getProject = (id: number): Types.Project => {
     const department =
-      Data.jobDepartments[
-        Math.floor(Math.random() * Data.jobDepartments.length)
-      ].department;
+      Data.departments[Math.floor(Math.random() * Data.departments.length)];
     const departmentEmployees = employeeList.filter(
       (employee) => employee.jobData.department === department
     );
@@ -60,10 +58,10 @@ const Projects = () => {
       department,
       timeline: {
         startDate: getRandomDate(true),
-        deadline: getRandomDate(false)
+        deadline: getRandomDate(false),
       },
       progress: Math.floor(Math.random() * 101),
-      id
+      id,
     };
 
     return project;
@@ -73,7 +71,7 @@ const Projects = () => {
     const projects = [...Array(21)].map((_, i) => getProject(i));
     dispatch({
       type: Types.ApplicationReducerTypes.PROJECT,
-      payload: projects
+      payload: projects,
     });
   }, []);
 
@@ -83,8 +81,8 @@ const Projects = () => {
         Projects
       </h3>
       <div className="projects d-flex flex-column gap-3">
-        {projects.map((project) => (
-          <ProjectComponent {...project} />
+        {projects.map((project, idx) => (
+          <ProjectComponent key={idx} {...project} />
         ))}
       </div>
     </div>

@@ -15,8 +15,7 @@ const Departments = () => {
         Departments
       </h3>
       <div className="d-flex flex-column gap-3">
-        {Data.jobDepartments.map((section) => {
-          const department = section.department;
+        {Data.departments.map((department, idx) => {
           const departmentProjects = projects.filter(
             (project) => project.department === department
           );
@@ -25,7 +24,12 @@ const Departments = () => {
           );
           return (
             <Department
-              {...{ departmentProjects, departmentEmployees, department }}
+              {...{
+                key: idx,
+                departmentProjects,
+                departmentEmployees,
+                department,
+              }}
             />
           );
         })}
