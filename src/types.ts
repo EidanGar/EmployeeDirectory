@@ -10,7 +10,7 @@ export type Themes = "DARK" | "LIGHT";
 export enum SortActionPayload {
   DEFAULT = "DEFAULT",
   ASCENDING = "ASCENDING",
-  DECENDING = "DECENDING"
+  DECENDING = "DECENDING",
 }
 
 export enum FilterActionPayload {
@@ -20,7 +20,8 @@ export enum FilterActionPayload {
   SKILLS = "SKILLS",
   DEPARTMENT = "DEPARTMENT",
   WORKING = "WORKING",
-  FORMAT = "FORMAT"
+  FORMAT = "FORMAT",
+  PAGE = "PAGE",
 }
 
 export type SearchReducerActionTypes = SortActionPayload | FilterActionPayload;
@@ -32,7 +33,7 @@ export interface AgeRange {
 
 export enum EmployeeCardsFormat {
   CARD = "CARD",
-  ROW = "ROW"
+  ROW = "ROW",
 }
 
 export interface SearchReducerState {
@@ -44,6 +45,7 @@ export interface SearchReducerState {
   jobDepartment: string;
   sortDirection: SortActionPayload;
   displayFormat: EmployeeCardsFormat;
+  page: number;
 }
 
 export type SearchReducerPayload = ValueOf<SearchReducerState>;
@@ -82,7 +84,7 @@ export interface Employee {
   description: string;
   age: number;
   isWorker: boolean;
-  id?: number;
+  id: number;
 }
 
 export interface SelectOption {
@@ -98,12 +100,12 @@ export enum ApplicationReducerTypes {
   LOADING = "LOADING",
   ERROR = "ERROR",
   LIST = "LIST",
-  PROJECT = "PROJECT"
+  PROJECT = "PROJECT",
 }
 
 export enum ApplicationThemes {
   DARK = "DARK",
-  LIGHT = "LIGHT"
+  LIGHT = "LIGHT",
 }
 
 export type Project = {
@@ -141,7 +143,7 @@ export enum ApplicationPages {
   EMPLOYEES = "EMPLOYEES",
   HELP = "HELP",
   PROJECTS = "PROJECTS",
-  DEPARTMENTS = "DEPARTMENTS"
+  DEPARTMENTS = "DEPARTMENTS",
 }
 
 export interface CombinedReducers {

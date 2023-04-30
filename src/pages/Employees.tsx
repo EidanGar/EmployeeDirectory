@@ -3,9 +3,12 @@ import * as Types from "../types";
 import SearchBar from "../components/employeesComponents/SearchBar";
 import SearchFilter from "../components/employeesComponents/SearchFilter";
 import DisplayFormat from "../components/employeesComponents/DisplayFormat";
+import Pagination from "../components/employeesComponents/Pagination";
 import { useSelector } from "react-redux";
 import { memo } from "react";
 import { Link } from "react-router-dom";
+
+import { useEffect } from "react";
 
 const Employees = () => {
   const {
@@ -15,6 +18,7 @@ const Employees = () => {
     workStatus,
     ageRange,
     displayFormat,
+    page,
   } = useSelector<Types.CombinedReducers, Types.SearchReducerState>(
     (state) => state.search
   );
@@ -50,6 +54,10 @@ const Employees = () => {
     });
   };
 
+  useEffect(() => {
+    console.log(page);
+  }, [page]);
+
   return (
     <div className="p-4 employees-page position-relative min-vh-100 w-100 d-flex flex-column">
       <div className="d-flex mt-sm-0 mt-4 mb-3 gap-2 w-100 justify-content-between align-items-center">
@@ -69,16 +77,19 @@ const Employees = () => {
         </div>
       </div>
       <div
-        className={`employees ${
+        className={`employees-container ${
           displayFormat === Types.EmployeeCardsFormat.CARD
-            ? "employees--cards"
-            : "employees--rows"
+            ? "card-format"
+            : "row-format"
         }`}
       >
-        {filterEmplyees(employeeList).map((employee, idx) => (
-          <Employee {...{ key: idx, employee, idx }} />
-        ))}
+        {filterEmplyees(employeeList)
+          .slice((page - 1) * 20, page * 20)
+          .map((employee, idx) => (
+            <Employee {...{ key: idx, employee, idx }} />
+          ))}
       </div>
+      <Pagination employeesCount={filterEmplyees(employeeList).length} />
     </div>
   );
 };

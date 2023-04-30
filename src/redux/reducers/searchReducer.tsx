@@ -8,11 +8,12 @@ const searchReducer = (
     skillsSelected: [],
     ageRange: {
       min: 0,
-      max: 100
+      max: 100,
     },
     jobDepartment: "",
     sortDirection: Types.SortActionPayload.DEFAULT,
-    displayFormat: Types.EmployeeCardsFormat.CARD
+    displayFormat: Types.EmployeeCardsFormat.CARD,
+    page: 1,
   },
   action: Types.SearchReducerAction
 ) => {
@@ -34,15 +35,17 @@ const searchReducer = (
     case Types.FilterActionPayload.AGE:
       return {
         ...state,
-        ageRange: action.payload as { min: number; max: number }
+        ageRange: action.payload as { min: number; max: number },
       };
     case Types.FilterActionPayload.DEPARTMENT:
       return { ...state, jobDepartment: action.payload as string };
     case Types.FilterActionPayload.FORMAT:
       return {
         ...state,
-        displayFormat: action.payload as Types.EmployeeCardsFormat
+        displayFormat: action.payload as Types.EmployeeCardsFormat,
       };
+    case Types.FilterActionPayload.PAGE:
+      return { ...state, page: action.payload as number };
     default:
       return state;
   }

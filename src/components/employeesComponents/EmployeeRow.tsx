@@ -3,15 +3,15 @@ import EmployeeControl from "./EmployeeControl";
 
 const EmployeeRow = ({
   employee,
-  idx
+  idx,
 }: {
   employee: Employee;
   idx: number;
 }) => {
   return (
     <div
-      className={`employee--row container bg-light rounded border-left-${
-        employee.isWorker ? "success" : "danger"
+      className={`employee-row container bg-light rounded border-left-${
+        employee.isWorker ? "success" : "warning"
       }`}
     >
       <img
