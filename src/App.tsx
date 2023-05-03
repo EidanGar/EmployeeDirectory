@@ -18,6 +18,7 @@ import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import getProjects from "./helpers/getProjects";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -29,11 +30,16 @@ const App = () => {
   useEffect(() => {
     const setState = async () => {
       dispatch({ type: Types.ApplicationReducerTypes.LOADING, payload: true });
-      console.log("Fetching data.");
+
+      const projects = getProjects(21, employeeList);
+
+      dispatch({
+        type: Types.ApplicationReducerTypes.PROJECT,
+        payload: projects,
+      });
 
       try {
         const fetchResult = await fetchEmployees();
-        console.log(fetchResult);
 
         if (fetchResult && !("error" in fetchResult)) {
           dispatch({
@@ -41,13 +47,17 @@ const App = () => {
             payload: fetchResult,
           });
         } else {
-          throw new Error(fetchResult.reason);
+          throw new Error(
+            (fetchResult && fetchResult.reason) || "Unknown error"
+          );
         }
       } catch (error) {
-        dispatch({
-          type: Types.ApplicationReducerTypes.ERROR,
-          payload: { error: true, reason: error.message },
-        });
+        if (error instanceof Error) {
+          dispatch({
+            type: Types.ApplicationReducerTypes.ERROR,
+            payload: { error: true, reason: error.message ?? "" },
+          });
+        }
       }
       setTimeout(() => {
         dispatch({
@@ -57,9 +67,8 @@ const App = () => {
       }, 200);
     };
 
-    console.log("Rendering Application.");
     setState();
-  }, [employeeList.length, dispatch]);
+  }, []);
 
   return (
     <div className="app bg-gray-200 position-relative">

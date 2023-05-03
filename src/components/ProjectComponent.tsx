@@ -51,7 +51,7 @@ const ProjectComponent = ({
     <div className="project card shadow p-3 d-flex flex-column gap-3">
       <div className="d-flex flex-column flex-sm-row justify-content-between gap-3 gap-sm-0 align-items-center w-100">
         <h4 className="mb-0 text-center text-sm-start text-dark">
-          {projectInfo.title ?? "Untitled"}
+          {projectInfo?.title ?? "Untitled"}
         </h4>
         <div className="d-flex gap-3 align-items-center">
           <div className="w-auto">
@@ -86,17 +86,17 @@ const ProjectComponent = ({
       >
         <div className="d-flex flex-sm-row flex-column align-items-sm-start align-items-center justify-content-start gap-3">
           <Link
-            to={`/employees/${lead.name.toLowerCase().replace(" ", "-")}`}
+            to={`/employees/${lead?.name.toLowerCase().replace(" ", "-")}`}
             className=" d-flex flex-column justify-content-center align-items-center"
             style={{ textDecoration: "none" }}
           >
             <img
               className="w-sm-100 rounded"
-              src={lead.pictures.imageUrl}
-              alt={lead.name}
+              src={lead?.pictures?.imageUrl}
+              alt={lead?.name}
             />
             <h5 className="text-center text-nowrap mt-2 text-dark">
-              {lead.name}
+              {lead?.name}
             </h5>
             <div className="h6 mb-1 text-gray-900 text-center">
               Project Lead
@@ -104,12 +104,12 @@ const ProjectComponent = ({
           </Link>
           <div className="d-flex gap-1 flex-column justify-content-start align-items-start">
             <p className="mb-0 text-gray-700">Project Description:</p>
-            <p style={{ fontSize: "1.2rem" }}>{projectInfo.description}</p>
+            <p style={{ fontSize: "1.2rem" }}>{projectInfo?.description}</p>
             <div className="d-flex w-100 gap-3 flex-wrap">
               <h6 className="text-gray-900">
-                Start Date: {timeline.startDate}
+                Start Date: {timeline?.startDate}
               </h6>
-              <h6 className="text-gray-900">Deadline: {timeline.deadline}</h6>
+              <h6 className="text-gray-900">Deadline: {timeline?.deadline}</h6>
             </div>
             <h6 className="text-gray-900 mb-0">{department} Department</h6>
           </div>
