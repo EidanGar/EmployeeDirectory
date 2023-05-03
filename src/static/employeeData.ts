@@ -1,4 +1,4 @@
-import { ProjectData } from "../types";
+import { ProjectData, DepartmentsData } from "../types";
 
 export const employeeDescriptions = [
   "a highly motivated individual with a strong work ethic and positive attitude.",
@@ -305,7 +305,7 @@ export const softSkills = [
   "Humor",
 ];
 
-export const jobDepartments = {
+export const jobDepartments: DepartmentsData = {
   "Human Resources (HR)": [
     {
       jobTitle: "HR Manager",

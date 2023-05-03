@@ -157,3 +157,10 @@ export type ProjectInfo = {
 };
 
 export type ProjectData = Record<string, ProjectInfo[]>;
+
+export type DepartmentInfo = {
+  jobTitle: string;
+  hardSkills: string[];
+}[];
+
+export type DepartmentsData = Record<string, DepartmentInfo>;
