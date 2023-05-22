@@ -12,7 +12,7 @@ interface DepartmentProps {
 const Department = ({
   department,
   departmentProjects,
-  departmentEmployees
+  departmentEmployees,
 }: DepartmentProps) => {
   const totalProjectProgress = Math.round(
     departmentProjects?.reduce((a, b) => a + b.progress, 0) /
@@ -26,10 +26,10 @@ const Department = ({
         {departmentProjects.map((project, idx) => (
           <div
             key={idx}
-            className="d-flex align-items-center justify-content-between gap-2 mb-2"
+            className="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2"
           >
-            <h6 className="mb-0">{project.projectInfo.title}</h6>
-            <ProgressBar width={"75"} progress={project.progress} />
+            <h6 className="text-nowrap mb-0">{project.projectInfo.title}</h6>
+            <ProgressBar width={"100"} progress={project.progress} />
           </div>
         ))}
       </Accordion>
@@ -52,7 +52,7 @@ const Department = ({
                 <h6 className="mb-0">{employee.name}</h6>
               </Link>
             ))}
-          </div>
+          </div>,
         ]}
       </Accordion>
 

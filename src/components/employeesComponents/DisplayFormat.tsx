@@ -12,14 +12,14 @@ const DisplayFormat = () => {
   const setCardFormat = () => {
     dispatch({
       type: Types.FilterActionPayload.FORMAT,
-      payload: Types.EmployeeCardsFormat.CARD
+      payload: Types.EmployeeCardsFormat.CARD,
     });
   };
 
   const setRowFormat = () => {
     dispatch({
       type: Types.FilterActionPayload.FORMAT,
-      payload: Types.EmployeeCardsFormat.ROW
+      payload: Types.EmployeeCardsFormat.ROW,
     });
   };
 
@@ -27,9 +27,9 @@ const DisplayFormat = () => {
     <div className="card-display d-flex">
       <div
         onClick={setCardFormat}
-        className={`display--cards ${
+        className={`card-display-format ${
           displayFormat === Types.EmployeeCardsFormat.CARD
-            ? "selected--format"
+            ? "selected-card-format"
             : ""
         }`}
       >
@@ -37,9 +37,9 @@ const DisplayFormat = () => {
       </div>
       <div
         onClick={setRowFormat}
-        className={`display--cards ${
+        className={`card-display-format ${
           displayFormat === Types.EmployeeCardsFormat.ROW
-            ? "selected--format"
+            ? "selected-card-format"
             : ""
         }`}
       >

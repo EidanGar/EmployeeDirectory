@@ -1,4 +1,5 @@
 import * as Data from "../static/employeeData";
+import backupData from "../static/backupData";
 
 function randomSubarray(array: any[]) {
   let result: string[] = [];
@@ -74,10 +75,7 @@ const fetchEmployees = async () => {
 
     return employees;
   } catch (error) {
-    if (error instanceof Error) {
-      console.error(`${error.name}: ${error.message}`);
-      return { error: true, reason: error.message };
-    }
+    return backupData;
   }
 };
 

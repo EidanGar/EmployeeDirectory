@@ -6,6 +6,7 @@ import { FaUserTie } from "react-icons/fa";
 import { AiOutlineMail } from "react-icons/ai";
 import EmployeeRow from "./EmployeeRow";
 import EmployeeControl from "./EmployeeControl";
+import placeholderEmployee from "../../static/placeholderEmployee.png";
 
 const Employee = ({
   employee: {
@@ -16,12 +17,11 @@ const Employee = ({
     pictures,
     description,
     age,
-    isWorker
+    isWorker,
+    id,
   },
-  idx
 }: {
   employee: Types.Employee;
-  idx: number;
 }) => {
   const { displayFormat } = useSelector<
     Types.CombinedReducers,
@@ -36,7 +36,7 @@ const Employee = ({
     pictures,
     description,
     age,
-    isWorker
+    isWorker,
   };
 
   const EmployeeTable = () => (
@@ -79,16 +79,16 @@ const Employee = ({
     >
       <Card.Img
         variant="top rounded-circle w-75"
-        src={pictures.imageUrl || "../../static/placeholderEmployee.png"}
+        src={pictures.imageUrl || placeholderEmployee}
       />
       <Card.Body className="text-center w-100">
         <h5 className="text-dark text-nowrap m-0 mb-4">{name}</h5>
         <EmployeeTable />
       </Card.Body>
-      <EmployeeControl {...{ employee, idx }} />
+      <EmployeeControl {...{ employee, id }} />
     </Card>
   ) : (
-    <EmployeeRow {...{ employee, idx }} />
+    <EmployeeRow {...{ employee, id }} />
   );
 };
 

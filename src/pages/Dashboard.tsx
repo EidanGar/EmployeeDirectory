@@ -26,7 +26,7 @@ const Dashboard = () => {
       parameter: "Employees",
       value: employeeList.length,
       Icon: FaUserTie,
-      color: "primary"
+      color: "primary",
     },
     {
       parameter: "Average age",
@@ -34,25 +34,25 @@ const Dashboard = () => {
         employeeList.reduce((a, b) => a + +b.age, 0) / employeeList.length
       ),
       Icon: BsFillPeopleFill,
-      color: "success"
+      color: "success",
     },
     {
       parameter: "Projects",
       value: projects.length,
       Icon: FaClipboardList,
-      color: "info"
+      color: "info",
     },
     {
       parameter: "Turnover",
       value: "47.2%",
       Icon: BsDoorOpenFill,
-      color: "warning"
-    }
+      color: "warning",
+    },
   ];
 
   const DashboardEmployeeRow = ({
     name,
-    iconUrl
+    iconUrl,
   }: {
     name: string;
     iconUrl: string;
@@ -133,7 +133,7 @@ const Dashboard = () => {
           <div className="card-header text-primary p-3">
             <h6 className="m-0 font-weight-bold text-primary">Recent Hires</h6>
           </div>
-          <div className="dashboard-employees card-body d-flex gap-3 flex-column">
+          <div className="dashboard__employees card-body d-flex gap-3 flex-column">
             {employeeList
               .slice(0, Math.max(3, Math.floor(window.innerHeight / 160)))
               .map(({ name, pictures: { iconUrl } }, idx) => (
