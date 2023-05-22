@@ -19,7 +19,7 @@ const NewEmployee = () => {
         value: skill,
         label: skill,
         color: "#00B8D9",
-        isFixed: true
+        isFixed: true,
       };
     }
   );
@@ -29,32 +29,30 @@ const NewEmployee = () => {
     age: NaN,
     pictures: {
       iconUrl: "",
-      imageUrl: ""
+      imageUrl: "",
     },
     contact: {
       email: "",
-      phone: ""
+      phone: "",
     },
     description: "",
     isWorker: true,
     jobData: {
       jobTitle: "",
-      department: ""
+      department: "",
     },
     skills: {
       softSkills: [],
-      hardSkills: []
+      hardSkills: [],
     },
-    id: NaN
+    id: NaN,
   };
 
-  const [employee, setEmployee] = useState<Types.Employee>(
-    initialEmployeeState
-  );
+  const [employee, setEmployee] =
+    useState<Types.Employee>(initialEmployeeState);
   const [hardSkillOptions, setHardSkillOptions] = useState<string[]>([]);
 
   const getHardSkillOptions = ({ department, jobTitle }: Types.JobData) => {
-    console.log(jobTitle);
     const jobDepartment = Data.jobDepartments[department];
     const indexOfJob = jobDepartment
       .map((job) => job.jobTitle)
@@ -81,8 +79,8 @@ const NewEmployee = () => {
             ...prev,
             contact: {
               ...prev.contact,
-              [name]: value
-            }
+              [name]: value,
+            },
           };
         });
         break;
@@ -96,8 +94,8 @@ const NewEmployee = () => {
             ...prev,
             pictures: {
               imageUrl: value,
-              iconUrl: value
-            }
+              iconUrl: value,
+            },
           };
         });
         break;
@@ -106,7 +104,7 @@ const NewEmployee = () => {
           return name in prev
             ? {
                 ...prev,
-                [name]: value
+                [name]: value,
               }
             : prev;
         });
@@ -122,7 +120,7 @@ const NewEmployee = () => {
     const softSkills = s.map((a) => a.value);
     setEmployee((prev) => ({
       ...prev,
-      skills: { ...prev.skills, softSkills }
+      skills: { ...prev.skills, softSkills },
     }));
   };
 
@@ -135,7 +133,7 @@ const NewEmployee = () => {
     const hardSkills = s.map((a) => a.value);
     setEmployee((prev) => ({
       ...prev,
-      skills: { ...prev.skills, hardSkills }
+      skills: { ...prev.skills, hardSkills },
     }));
   };
 
@@ -149,19 +147,19 @@ const NewEmployee = () => {
         setEmployee((prev) => {
           return {
             ...prev,
-            [name]: value
+            [name]: value,
           };
         });
         break;
       case "jobTitle":
         const newJobData = {
           department: value.split("-")[0],
-          jobTitle: value.split("-")[1]
+          jobTitle: value.split("-")[1],
         };
         setEmployee((prev) => {
           return {
             ...prev,
-            jobData: newJobData
+            jobData: newJobData,
           };
         });
         getHardSkillOptions(newJobData);
@@ -173,12 +171,12 @@ const NewEmployee = () => {
     e.preventDefault();
     const newEmployee = {
       ...employee,
-      id: employeeList.length - 1
+      id: employeeList.length - 1,
     };
     const newEmployeeList = [...employeeList, newEmployee];
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
-      payload: newEmployeeList
+      payload: newEmployeeList,
     });
   };
 
@@ -284,7 +282,7 @@ const NewEmployee = () => {
               value: skill,
               label: skill,
               color: "#00B8D9",
-              isFixed: true
+              isFixed: true,
             }))}
             isDisabled={!employee.jobData.jobTitle}
             isMulti

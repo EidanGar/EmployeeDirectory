@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="text-center">
+    <div className="text-center px-3">
       <div className="error mx-auto" data-text="404">
         404
       </div>

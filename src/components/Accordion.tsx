@@ -21,9 +21,11 @@ const Accordion = ({ name, children, className, divider }: AccordionProps) => {
         onClick={() => setIsShown((prev) => !prev)}
       >
         <h4 className="text-primary mb-0 ml-0">{name}</h4>
-        <button className="accordion-trigger">
+        <button className="accordion__trigger">
           <IoIosArrowForward
-            className={`accordion-trigger-icon ${isShown ? "arrow-down" : ""}`}
+            className={`accordion__trigger__icon ${
+              isShown ? "accordion__trigger__icon--down" : ""
+            }`}
           />
         </button>
       </div>

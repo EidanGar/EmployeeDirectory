@@ -127,7 +127,7 @@ const SearchFilter = () => {
   };
 
   return (
-    <div className="w-100">
+    <div style={{ zIndex: 999 }} className="w-100">
       <Button
         variant="outline-secondary"
         onClick={handleShow}

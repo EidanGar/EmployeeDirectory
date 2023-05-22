@@ -14,14 +14,15 @@ const Pagination = ({ employeesCount }: { employeesCount: number }) => {
   };
 
   const Page = ({ page }: { page: number }) => (
-    <span
+    <a
+      href="#employees"
       onClick={() => setPage(page)}
       className={`pagination__page bg-light d-flex align-items-center justify-content-center ${
         currentPage === page && "page--selected"
       }`}
     >
       {page}
-    </span>
+    </a>
   );
 
   const arrayFromNumber = (num: number) => {

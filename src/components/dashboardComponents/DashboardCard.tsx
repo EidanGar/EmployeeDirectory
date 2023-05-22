@@ -12,19 +12,19 @@ const DashboardCard = ({
   parameter,
   value,
   Icon,
-  color
+  color,
 }: DashboardCardProps) => {
   const DashboardCardIconStyles: CSSProperties = {
     width: "min(80px, 45%)",
     height: "auto",
     color: "#cfcfcf",
     position: "absolute",
-    left: "65%"
+    left: "65%",
   };
 
   return (
     <div
-      className={`card dashboard-card mb-3 mb-sm-0 flex-fill border-left-${color} shadow p-2`}
+      className={`card dashboard__card mb-3 mb-sm-0 flex-fill border-left-${color} shadow p-2`}
     >
       <div className="card-body">
         <div className="row position-relative no-gutters align-items-center justify-content-between px-3">

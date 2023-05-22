@@ -32,54 +32,59 @@ const Navigation = () => {
 
   const navLinkClass = (isSelected: boolean): string => {
     const NavItemClass =
-      "navigation-link d-flex gap-3 align-items-center w-100 rounded";
+      "navigation__link d-flex gap-3 align-items-center w-100 rounded";
     const unselectedLinkClass = NavItemClass + " text-dark";
     const selected = NavItemClass + " bg-primary text-light active";
     return isSelected ? selected : unselectedLinkClass;
   };
 
-  const navLinkText = "nav-item-text h6 m-0";
+  const navLinkText = "navigation__text h6 m-0";
 
   return (
-    <div className="sidebar position-fixed start-0 top-0 p-3 bg-light vh-sm-100 d-flex flex-sm-column gap-3">
+    <div className="navigation position-fixed start-0 top-0 p-3 bg-light vh-sm-100 d-flex flex-sm-column gap-3">
       <Link
+        title="Dashboard"
         to="/"
         className={navLinkClass(currentPage === ApplicationPages.DASHBOARD)}
         onClick={() => setCurrentPage(ApplicationPages.DASHBOARD)}
       >
-        <BsSpeedometer2 className="navigation-item-icon" />
+        <BsSpeedometer2 className="navigation__icon" />
         <span className={navLinkText}>Dashboard</span>
       </Link>
       <Link
+        title="Employees"
         to="/employees"
         className={navLinkClass(currentPage === ApplicationPages.EMPLOYEES)}
         onClick={() => setCurrentPage(ApplicationPages.EMPLOYEES)}
       >
-        <BsFillPeopleFill className="navigation-item-icon" />
+        <BsFillPeopleFill className="navigation__icon" />
         <span className={navLinkText}>Employees</span>
       </Link>
       <Link
+        title="Departments"
         to="/departments"
         className={navLinkClass(currentPage === ApplicationPages.DEPARTMENTS)}
         onClick={() => setCurrentPage(ApplicationPages.DEPARTMENTS)}
       >
-        <BsBuilding className="navigation-item-icon" />
+        <BsBuilding className="navigation__icon" />
         <span className={navLinkText}>Departments</span>
       </Link>
       <Link
+        title="Projects"
         to="/projects"
         className={navLinkClass(currentPage === ApplicationPages.PROJECTS)}
         onClick={() => setCurrentPage(ApplicationPages.PROJECTS)}
       >
-        <HiDocumentReport className="navigation-item-icon" />
+        <HiDocumentReport className="navigation__icon" />
         <span className={navLinkText}>Projects</span>
       </Link>
       <Link
+        title="Help"
         to="/help"
         className={navLinkClass(currentPage === ApplicationPages.HELP)}
         onClick={() => setCurrentPage(ApplicationPages.HELP)}
       >
-        <FiHelpCircle className="navigation-item-icon" />
+        <FiHelpCircle className="navigation__icon" />
         <span className={navLinkText}>Help</span>
       </Link>
       <hr />

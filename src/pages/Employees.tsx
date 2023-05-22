@@ -4,11 +4,11 @@ import SearchBar from "../components/employeesComponents/SearchBar";
 import SearchFilter from "../components/employeesComponents/SearchFilter";
 import DisplayFormat from "../components/employeesComponents/DisplayFormat";
 import Pagination from "../components/employeesComponents/Pagination";
+import Loading from "../components/Loading";
 import { useSelector } from "react-redux";
 import { memo } from "react";
 import { Link } from "react-router-dom";
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Employees = () => {
   const {
@@ -22,12 +22,17 @@ const Employees = () => {
   } = useSelector<Types.CombinedReducers, Types.SearchReducerState>(
     (state) => state.search
   );
+  const [isLoading, setIsLoading] = useState(true);
   const { employeeList } = useSelector<
     Types.CombinedReducers,
     Types.ApplicationReducerState
   >((state) => state.application);
+  const [filteredEmployees, setFilteredEmployees] = useState<Types.Employee[]>(
+    []
+  );
 
-  const filterEmplyees = (employeeList: Types.Employee[]) => {
+  const filterEmployees = (employeeList: Types.Employee[]) => {
+    console.log("Hello employeeList", employeeList);
     return employeeList.filter((employee) => {
       const isNameMatching = employee.name
         .toLowerCase()
@@ -55,11 +60,19 @@ const Employees = () => {
   };
 
   useEffect(() => {
-    console.log(page);
-  }, [page]);
+    const loadingDelay = 300;
+    setTimeout(() => setIsLoading(false), loadingDelay);
+  }, []);
+
+  useEffect(() => {
+    setFilteredEmployees(filterEmployees(employeeList));
+  }, [employeeList.length]);
 
   return (
-    <div className="p-4 employees-page position-relative min-vh-100 w-100 d-flex flex-column">
+    <div
+      id="employees"
+      className="p-4 position-relative min-vh-100 w-100 d-flex flex-column"
+    >
       <div className="d-flex mt-sm-0 mt-4 mb-3 gap-2 w-100 justify-content-between align-items-center">
         <h3 className="text-gray-800 text-sm-start text-center">Employees</h3>
         <Link to="/employees/new" className="btn btn-primary">
@@ -76,20 +89,24 @@ const Employees = () => {
           <SearchFilter />
         </div>
       </div>
-      <div
-        className={`employees-container ${
-          displayFormat === Types.EmployeeCardsFormat.CARD
-            ? "card-format"
-            : "row-format"
-        }`}
-      >
-        {filterEmplyees(employeeList)
-          .slice((page - 1) * 20, page * 20)
-          .map((employee, idx) => (
-            <Employee {...{ key: idx, employee, idx }} />
-          ))}
-      </div>
-      <Pagination employeesCount={filterEmplyees(employeeList).length} />
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <div
+          className={`employees ${
+            displayFormat === Types.EmployeeCardsFormat.CARD
+              ? "card-format"
+              : "row-format"
+          }`}
+        >
+          {filteredEmployees
+            .slice((page - 1) * 20, page * 20)
+            .map((employee, idx) => (
+              <Employee {...{ key: idx, employee, idx }} />
+            ))}
+        </div>
+      )}{" "}
+      {!isLoading && <Pagination employeesCount={filteredEmployees.length} />}
     </div>
   );
 };

@@ -10,7 +10,7 @@ const EmployeeRow = ({
 }) => {
   return (
     <div
-      className={`employee-row container bg-light rounded border-left-${
+      className={`employee--row container bg-light rounded border-left-${
         employee.isWorker ? "success" : "warning"
       }`}
     >

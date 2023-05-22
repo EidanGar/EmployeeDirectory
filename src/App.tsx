@@ -15,14 +15,13 @@ import NotFound from "./components/NotFound";
 import store from "./redux/store";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import Navigation from "./components/Navigation";
-import Loading from "./components/Loading";
 import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import getProjects from "./helpers/getProjects";
 
 const App = () => {
   const dispatch = useDispatch();
-  const { isLoading, appError, employeeList } = useSelector<
+  const { appError, employeeList } = useSelector<
     Types.CombinedReducers,
     Types.ApplicationReducerState
   >((state) => state.application);
@@ -31,6 +30,21 @@ const App = () => {
     const setState = async () => {
       dispatch({ type: Types.ApplicationReducerTypes.LOADING, payload: true });
 
+      try {
+        const usersFetchResult = await fetchEmployees();
+        console.log(usersFetchResult);
+
+        dispatch({
+          type: Types.ApplicationReducerTypes.LIST,
+          payload: usersFetchResult,
+        });
+      } catch (error) {
+        dispatch({
+          type: Types.ApplicationReducerTypes.ERROR,
+          payload: { error: true, reason: JSON.stringify(error) },
+        });
+      }
+
       const projects = getProjects(21, employeeList);
 
       dispatch({
@@ -38,27 +52,6 @@ const App = () => {
         payload: projects,
       });
 
-      try {
-        const fetchResult = await fetchEmployees();
-
-        if (fetchResult && !("error" in fetchResult)) {
-          dispatch({
-            type: Types.ApplicationReducerTypes.LIST,
-            payload: fetchResult,
-          });
-        } else {
-          throw new Error(
-            (fetchResult && fetchResult.reason) || "Unknown error"
-          );
-        }
-      } catch (error) {
-        if (error instanceof Error) {
-          dispatch({
-            type: Types.ApplicationReducerTypes.ERROR,
-            payload: { error: true, reason: error.message ?? "" },
-          });
-        }
-      }
       setTimeout(() => {
         dispatch({
           type: Types.ApplicationReducerTypes.LOADING,
@@ -78,7 +71,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/employees">
-            <Route index element={isLoading ? <Loading /> : <Employees />} />
+            <Route index element={<Employees />} />
             <Route path=":id" element={<EmployeeProfile />} />
             <Route path="new" element={<NewEmployee />} />
           </Route>
