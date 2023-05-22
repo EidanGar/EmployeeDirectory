@@ -19,7 +19,7 @@ const NewEmployee = () => {
         value: skill,
         label: skill,
         color: "#00B8D9",
-        isFixed: true,
+        isFixed: true
       };
     }
   );
@@ -29,33 +29,31 @@ const NewEmployee = () => {
     age: NaN,
     pictures: {
       iconUrl: "",
-      imageUrl: "",
+      imageUrl: ""
     },
     contact: {
       email: "",
-      phone: "",
+      phone: ""
     },
     description: "",
     isWorker: true,
     jobData: {
       jobTitle: "",
-      department: "",
+      department: ""
     },
     skills: {
       softSkills: [],
-      hardSkills: [],
+      hardSkills: []
     },
-    id: NaN,
+    id: NaN
   };
 
-  const [employee, setEmployee] =
-    useState<Types.Employee>(initialEmployeeState);
+  const [employee, setEmployee] = useState<Types.Employee>(
+    initialEmployeeState
+  );
   const [hardSkillOptions, setHardSkillOptions] = useState<string[]>([]);
 
-  const getHardSkillOptions = ({
-    department,
-    jobTitle,
-  }: Types.JobData): Types.SelectOption[] => {
+  const getHardSkillOptions = ({ department, jobTitle }: Types.JobData) => {
     console.log(jobTitle);
     const jobDepartment = Data.jobDepartments[department];
     const indexOfJob = jobDepartment
@@ -63,14 +61,7 @@ const NewEmployee = () => {
       .indexOf(jobTitle);
     const skills = jobDepartment[indexOfJob].hardSkills;
 
-    setHardSkillOptions(
-      skills.map((skill) => ({
-        value: skill,
-        label: skill,
-        color: "#00B8D9",
-        isFixed: true,
-      }))
-    );
+    setHardSkillOptions(skills);
   };
 
   const handleEmployeeInputChange = (
@@ -90,8 +81,8 @@ const NewEmployee = () => {
             ...prev,
             contact: {
               ...prev.contact,
-              [name]: value,
-            },
+              [name]: value
+            }
           };
         });
         break;
@@ -105,8 +96,8 @@ const NewEmployee = () => {
             ...prev,
             pictures: {
               imageUrl: value,
-              iconUrl: value,
-            },
+              iconUrl: value
+            }
           };
         });
         break;
@@ -115,7 +106,7 @@ const NewEmployee = () => {
           return name in prev
             ? {
                 ...prev,
-                [name]: value,
+                [name]: value
               }
             : prev;
         });
@@ -128,7 +119,11 @@ const NewEmployee = () => {
       label: string;
     }>
   ) => {
-    console.log(s);
+    const softSkills = s.map((a) => a.value);
+    setEmployee((prev) => ({
+      ...prev,
+      skills: { ...prev.skills, softSkills }
+    }));
   };
 
   const handleHardSkillChange = (
@@ -137,7 +132,11 @@ const NewEmployee = () => {
       label: string;
     }>
   ) => {
-    console.log(s);
+    const hardSkills = s.map((a) => a.value);
+    setEmployee((prev) => ({
+      ...prev,
+      skills: { ...prev.skills, hardSkills }
+    }));
   };
 
   const handleEmployeeSelectChange = (
@@ -150,19 +149,19 @@ const NewEmployee = () => {
         setEmployee((prev) => {
           return {
             ...prev,
-            [name]: value,
+            [name]: value
           };
         });
         break;
       case "jobTitle":
         const newJobData = {
           department: value.split("-")[0],
-          jobTitle: value.split("-")[1],
+          jobTitle: value.split("-")[1]
         };
         setEmployee((prev) => {
           return {
             ...prev,
-            jobData: newJobData,
+            jobData: newJobData
           };
         });
         getHardSkillOptions(newJobData);
@@ -174,15 +173,13 @@ const NewEmployee = () => {
     e.preventDefault();
     const newEmployee = {
       ...employee,
-      name: employeeName.join(" "),
-      id: employeeList.length - 1,
+      id: employeeList.length - 1
     };
     const newEmployeeList = [...employeeList, newEmployee];
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
-      payload: newEmployeeList,
+      payload: newEmployeeList
     });
-    console.log(`Employee ${employeeName.join(" ")} Added`);
   };
 
   return (
@@ -209,7 +206,6 @@ const NewEmployee = () => {
           <Form.Control
             onChange={handleEmployeeInputChange}
             name="age"
-            id="age"
             type="number"
             placeholder="Age"
           />
@@ -284,7 +280,12 @@ const NewEmployee = () => {
           <CreatableSelect
             onChange={handleHardSkillChange}
             name="hardSkills"
-            options={hardSkillOptions}
+            options={hardSkillOptions.map((skill) => ({
+              value: skill,
+              label: skill,
+              color: "#00B8D9",
+              isFixed: true
+            }))}
             isDisabled={!employee.jobData.jobTitle}
             isMulti
             isClearable
