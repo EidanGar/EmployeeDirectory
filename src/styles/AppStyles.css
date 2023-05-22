@@ -291,6 +291,11 @@
   .row-format {
     justify-content: center;
   }
+
+  .pagination__page {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -301,7 +306,7 @@
     min-height: 10vh;
     max-width: 100vh;
     justify-content: space-between;
-    z-index: 9999;
+    z-index: 998;
   }
 
   .sidebar > .navigation-link {
