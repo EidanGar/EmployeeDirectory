@@ -13,7 +13,7 @@ const ProjectComponent = ({
   progress,
   timeline,
   department,
-  id,
+  id
 }: Project) => {
   const dispatch = useDispatch();
   const { projects } = useSelector<
@@ -28,22 +28,22 @@ const ProjectComponent = ({
     const updateProjects = [
       ...projects.slice(0, id),
       newProject,
-      ...projects.slice(id + 1),
+      ...projects.slice(id + 1)
     ];
     dispatch({
       type: Types.ApplicationReducerTypes.PROJECT,
-      payload: updateProjects,
+      payload: updateProjects
     });
   };
 
   const deleteProject = () => {
     const updateProjects = [
       ...projects.slice(0, id),
-      ...projects.slice(id + 1),
+      ...projects.slice(id + 1)
     ];
     dispatch({
       type: Types.ApplicationReducerTypes.PROJECT,
-      payload: updateProjects,
+      payload: updateProjects
     });
   };
 
@@ -71,11 +71,11 @@ const ProjectComponent = ({
           </button>
           <button
             onClick={() => setIsShown((prev) => !prev)}
-            className="accordion-trigger project-button"
+            className="accordion__trigger project-button"
           >
             <IoIosArrowForward
-              className={`accordion-trigger-icon ${
-                isShown ? "arrow-down" : ""
+              className={`accordion__trigger__icon ${
+                isShown ? "accordion__trigger__icon--down" : ""
               }`}
             />
           </button>

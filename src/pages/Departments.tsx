@@ -24,12 +24,7 @@ const Departments = () => {
           );
           return (
             <Department
-              {...{
-                key: idx,
-                departmentProjects,
-                departmentEmployees,
-                department,
-              }}
+              {...{ key: idx, departmentProjects, departmentEmployees, department }}
             />
           );
         })}

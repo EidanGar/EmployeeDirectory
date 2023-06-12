@@ -1,13 +1,17 @@
-import Chart from "chart.js/auto";
-import { Doughnut } from "react-chartjs-2";
-import { useSelector } from "react-redux";
+import { Chart, DoughnutController, ArcElement, CategoryScale, LinearScale } from 'chart.js';
+import { useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import * as Types from "../../types";
 
+Chart.register(DoughnutController, ArcElement, CategoryScale, LinearScale);
+
 const DoughnutChart = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const { employeeList } = useSelector<
     Types.CombinedReducers,
     Types.ApplicationReducerState
   >((state) => state.application);
+
 
   const getRandomColors = (length: number) => {
     const colorsSet: Set<string> = new Set();
@@ -71,7 +75,29 @@ const DoughnutChart = () => {
     responsive: true
   };
 
-  return <Doughnut data={data} options={options} />;
+  useEffect(() => {
+    if (!canvasRef.current) {
+      return;
+    }
+
+    const ctx = canvasRef.current.getContext('2d');
+
+    if (!ctx) {
+      return;
+    }
+
+    const chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
+      options: options
+    });
+
+    return () => {
+      chart.destroy();
+    };
+  }, [data]);
+
+  return <canvas ref={canvasRef} />;
 };
 
 export default DoughnutChart;

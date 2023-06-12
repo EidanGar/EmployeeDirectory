@@ -5,23 +5,26 @@
   "keywords": [],
   "main": "src/index.tsx",
   "dependencies": {
+    "@types/chart.js": "^2.9.37",
     "@types/react-redux": "7.1.25",
     "@types/react-router-dom": "5.3.3",
     "bootstrap": "5.2.3",
     "chart.js": "4.2.1",
-    "react": "18.0.0",
+    "jext": "0.4.3",
+    "react": "^18.0.0",
     "react-bootstrap": "2.7.0",
     "react-chartjs-2": "5.2.0",
     "react-dom": "18.0.0",
     "react-icons": "4.7.1",
     "react-redux": "8.0.5",
     "react-router-dom": "6.4.4",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-select": "5.7.0",
     "redux": "4.2.1",
     "redux-thunk": "2.4.2"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.2",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "typescript": "4.4.2"
@@ -30,8 +33,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "type-check": "tsc --noEmit"
   },
+  "homepage": ".",
   "browserslist": [
     ">0.2%",
     "not dead",

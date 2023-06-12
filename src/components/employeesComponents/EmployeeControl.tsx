@@ -6,13 +6,7 @@ import { Button } from "react-bootstrap";
 import { FaTrash, FaInfoCircle, FaCheckCircle } from "react-icons/fa";
 import { AiFillWarning } from "react-icons/ai";
 
-const EmployeeControl = ({
-  employee,
-  idx
-}: {
-  employee: Types.Employee;
-  idx: number;
-}) => {
+const EmployeeControl = (employee: Types.Employee) => {
   const dispatch = useDispatch();
   const { employeeList } = useSelector<
     Types.CombinedReducers,
@@ -23,14 +17,14 @@ const EmployeeControl = ({
   const deleteEmployee = () => {
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
-      payload: [...employeeList.slice(0, idx), ...employeeList.slice(idx + 1)]
+      payload: [...employeeList.slice(0, employee.id), ...employeeList.slice(employee.id + 1)]
     });
   };
 
   const setWorkerStatusPositive = () => {
     setWorkStatus(true);
     const alteredEmployeeList = [...employeeList];
-    alteredEmployeeList[idx] = { ...employee, isWorker: true };
+    alteredEmployeeList[employee.id] = { ...employee, isWorker: true };
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
       payload: alteredEmployeeList
@@ -40,7 +34,7 @@ const EmployeeControl = ({
   const setWorkerStatusNegative = () => {
     setWorkStatus(false);
     const alteredEmployeeList = [...employeeList];
-    alteredEmployeeList[idx] = { ...employee, isWorker: false };
+    alteredEmployeeList[employee.id] = { ...employee, isWorker: false };
     dispatch({
       type: Types.ApplicationReducerTypes.LIST,
       payload: alteredEmployeeList

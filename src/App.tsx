@@ -32,16 +32,15 @@ const App = () => {
 
       try {
         const usersFetchResult = await fetchEmployees();
-        console.log(usersFetchResult);
 
         dispatch({
           type: Types.ApplicationReducerTypes.LIST,
-          payload: usersFetchResult,
+          payload: usersFetchResult
         });
       } catch (error) {
         dispatch({
           type: Types.ApplicationReducerTypes.ERROR,
-          payload: { error: true, reason: JSON.stringify(error) },
+          payload: { error: true, reason: JSON.stringify(error) }
         });
       }
 
@@ -49,13 +48,13 @@ const App = () => {
 
       dispatch({
         type: Types.ApplicationReducerTypes.PROJECT,
-        payload: projects,
+        payload: projects
       });
 
       setTimeout(() => {
         dispatch({
           type: Types.ApplicationReducerTypes.LOADING,
-          payload: false,
+          payload: false
         });
       }, 200);
     };

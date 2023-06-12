@@ -10,16 +10,36 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+export const filterEmployees = (employeeList: Types.Employee[], searchFilter: Types.SearchReducerState) => {
+  const { searchTerm, ageRange, workStatus, skillsSelected, jobTitle } = searchFilter;
+  return employeeList.filter((employee) => {
+    const isNameMatching = employee.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
+    const isWithinAgeRange =
+      employee.age >= ageRange.min && employee.age <= ageRange.max;
+    const isWorkStatusMatching =
+      workStatus === "ANY" || employee.isWorker === workStatus;
+    const isJobTitleMatching =
+      jobTitle === "" || employee.jobData.jobTitle === jobTitle;
+    const isSkillsMatching = [...skillsSelected].every((skill) =>
+      [...employee.skills.hardSkills, ...employee.skills.softSkills].includes(
+        skill
+      )
+    );
+
+    return (
+      isNameMatching &&
+      isWithinAgeRange &&
+      isWorkStatusMatching &&
+      isJobTitleMatching &&
+      isSkillsMatching
+    );
+  });
+};
+
 const Employees = () => {
-  const {
-    searchTerm,
-    skillsSelected,
-    jobTitle,
-    workStatus,
-    ageRange,
-    displayFormat,
-    page,
-  } = useSelector<Types.CombinedReducers, Types.SearchReducerState>(
+  const searchFilter = useSelector<Types.CombinedReducers, Types.SearchReducerState>(
     (state) => state.search
   );
   const [isLoading, setIsLoading] = useState(true);
@@ -31,41 +51,13 @@ const Employees = () => {
     []
   );
 
-  const filterEmployees = (employeeList: Types.Employee[]) => {
-    console.log("Hello employeeList", employeeList);
-    return employeeList.filter((employee) => {
-      const isNameMatching = employee.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      const isWithinAgeRange =
-        employee.age >= ageRange.min && employee.age <= ageRange.max;
-      const isWorkStatusMatching =
-        workStatus === "ANY" || employee.isWorker === workStatus;
-      const isJobTitleMatching =
-        jobTitle === "" || employee.jobData.jobTitle === jobTitle;
-      const isSkillsMatching = [...skillsSelected].every((skill) =>
-        [...employee.skills.hardSkills, ...employee.skills.softSkills].includes(
-          skill
-        )
-      );
-
-      return (
-        isNameMatching &&
-        isWithinAgeRange &&
-        isWorkStatusMatching &&
-        isJobTitleMatching &&
-        isSkillsMatching
-      );
-    });
-  };
-
   useEffect(() => {
     const loadingDelay = 300;
     setTimeout(() => setIsLoading(false), loadingDelay);
   }, []);
 
   useEffect(() => {
-    setFilteredEmployees(filterEmployees(employeeList));
+    setFilteredEmployees(filterEmployees(employeeList, searchFilter));
   }, [employeeList.length]);
 
   return (
@@ -94,15 +86,15 @@ const Employees = () => {
       ) : (
         <div
           className={`employees ${
-            displayFormat === Types.EmployeeCardsFormat.CARD
+            searchFilter.displayFormat === Types.EmployeeCardsFormat.CARD
               ? "card-format"
               : "row-format"
           }`}
         >
           {filteredEmployees
-            .slice((page - 1) * 20, page * 20)
+            .slice((searchFilter.page - 1) * 20, searchFilter.page * 20)
             .map((employee, idx) => (
-              <Employee {...{ key: idx, employee, idx }} />
+              <Employee {...{ key: idx, ...employee}} />
             ))}
         </div>
       )}{" "}

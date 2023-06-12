@@ -9,12 +9,7 @@ const Help = () => {
       </h3>
       <div className="questions d-flex flex-column gap-3 w-100">
         {FAQs.map((faq, idx) => (
-          <Accordion
-            divider={false}
-            className="faq__accordion"
-            key={idx}
-            name={faq.question}
-          >
+          <Accordion divider={false} className="faq__accordion" key={idx} name={faq.question}>
             <p className="text-dark p-3 bg-light rounded lead">{faq.answer}</p>
           </Accordion>
         ))}
